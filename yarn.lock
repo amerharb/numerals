@@ -865,9 +865,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@numerlas/eastern-arabic@workspace:packages/eastern-arabic":
+"@numerals/eastern-arabic@workspace:packages/eastern-arabic":
   version: 0.0.0-use.local
-  resolution: "@numerlas/eastern-arabic@workspace:packages/eastern-arabic"
+  resolution: "@numerals/eastern-arabic@workspace:packages/eastern-arabic"
   languageName: unknown
   linkType: soft
 
