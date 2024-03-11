@@ -16,12 +16,12 @@ jobs:
       - name: fill package name
         run: |
           if [[ $TAG_NAME =~ ^eastern-arabic\/v.* ]]; then
-              PACKAGE_NAME="@numerals/eastern-arabic"
+              PACKAGE_NAME="eastern-arabic"
           else
               echo "❌ tag name: $TAG_NAME doesn't point to any publishable package"
               exit 1
           fi
-          echo "📦 Package name: $PACKAGE_NAME"
+          echo "📦 Package name: @numerals/$PACKAGE_NAME"
           echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
@@ -72,7 +72,7 @@ jobs:
       - run: yarn test
 
       - name: publish @numerals/eastern-arabic @next to npm
-        if: ${{ env.PACKAGE_NAME == '@numerals/eastern-arabic' }}
+        if: ${{ env.PACKAGE_NAME == 'eastern-arabic' }}
         run: yarn workspace eastern-arabic npm publish --access public --tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.EASTERN_ARABIC_PUBLISH_AUTH_TOKEN }}
