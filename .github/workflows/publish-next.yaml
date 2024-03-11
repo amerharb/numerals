@@ -73,6 +73,6 @@ jobs:
 
       - name: publish @numerals/eastern-arabic @next to npm
         if: ${{ env.PACKAGE_NAME == 'eastern-arabic' }}
-        run: yarn workspace eastern-arabic npm publish --access public --tag next
+        run: yarn workspace @numerals/eastern-arabic npm publish --access public --tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.EASTERN_ARABIC_PUBLISH_AUTH_TOKEN }}
