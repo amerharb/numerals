@@ -18,7 +18,10 @@
 	"homepage": "https://github.com/amerharb/numerals#readme",
 	"url": "https://github.com/amerharb/numerals/issues",
 	"email": "numerals@amerharb.com",
-	"keywords": [],
+	"keywords": [
+		"eastern-arabic-numberals",
+		"eastern-arabic-numbers"
+	],
 	"license": "ISC",
 	"scripts": {
 		"build": "rm -rf dist && tsc",
