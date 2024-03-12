@@ -1,0 +1,23 @@
+.idea/
+dist/
+node_modules/
+
+# Yarn 4
+**/.yarn/*
+!**/.yarn/patches
+!**/.yarn/plugins
+!**/.yarn/releases
+!**/.yarn/versions
+
+### macOS template
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+/packages/*/coverage/coverage-summary.json
+/packages/*/.next/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
