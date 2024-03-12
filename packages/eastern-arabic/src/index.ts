@@ -1,4 +1,4 @@
-import { EA, numbers } from './numerals'
+import { EA } from './numerals'
 
 const map = new Map<string, string>(
 	[
@@ -13,6 +13,7 @@ const map = new Map<string, string>(
 		['8', EA['8']],
 		['9', EA['9']],
 		['.', EA.separator],
+		['-', ''],
 	]
 )
 
@@ -23,11 +24,10 @@ export function convert(source: number): string {
 		const u = map.get(letter) ?? throwNoNumeralFor(letter)
 		result += u
 	}
+	if (source < 0) {
+		result = result + '-'
+	}
 	return result
-}
-
-export function getNumerals(): readonly string[] {
-	return numbers
 }
 
 function throwNoNumeralFor(letter: string): never {

@@ -1,4 +1,4 @@
-export const numbers = [
+const numbers = [
 	'\u0660', /** #0 ٠ U+0660 number 0*/
 	'\u0661', /** #1 ١ U+0661 number 1*/
 	'\u0662', /** #2 ٢ U+0662 number 2*/

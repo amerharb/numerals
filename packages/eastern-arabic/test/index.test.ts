@@ -10,4 +10,8 @@ describe('convert()', () => {
 		const actual = convert(123.456)
 		expect(actual).toEqual('١٢٣٫٤٥٦')
 	})
+	it('convert -1 into ١-', () => {
+		const actual = convert(-1)
+		expect(actual).toEqual('١-')
+	})
 })
