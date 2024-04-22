@@ -865,13 +865,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@numerals/eastern-arabic@file:../eastern-arabic::locator=numerals-client%40workspace%3Apackages%2Fnumerals-client":
-  version: 0.0.1-next.3
-  resolution: "@numerals/eastern-arabic@file:../eastern-arabic#../eastern-arabic::hash=ecd0aa&locator=numerals-client%40workspace%3Apackages%2Fnumerals-client"
-  checksum: 10c0/dc49e4483543e56a63d391acb862bdf3ce12d5f2c675f66073f498a46b69736260c3f77a83508f894a103b0570395d51edcd4bfdd95c4704446649ab19605837
-  languageName: node
-  linkType: hard
-
 "@numerals/eastern-arabic@workspace:packages/eastern-arabic":
   version: 0.0.0-use.local
   resolution: "@numerals/eastern-arabic@workspace:packages/eastern-arabic"
@@ -3546,8 +3539,6 @@ __metadata:
 "numerals-client@workspace:packages/numerals-client":
   version: 0.0.0-use.local
   resolution: "numerals-client@workspace:packages/numerals-client"
-  dependencies:
-    "@numerals/eastern-arabic": "file:../eastern-arabic"
   languageName: unknown
   linkType: soft
 
