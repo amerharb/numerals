@@ -14,4 +14,13 @@ describe('convert()', () => {
 		const actual = convert(-1)
 		expect(actual).toEqual('١-')
 	})
+	it('convert 0 into ٠', () => {
+		const actual = convert(0)
+		expect(actual).toEqual('٠')
+	})
+	it.each([NaN, Infinity, -Infinity])
+	('throw Error for non number [%s]', (it) => {
+		const actual = () => convert(it)
+		expect(actual).toThrowError('Source is not a finite number')
+	})
 })

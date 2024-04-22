@@ -18,6 +18,9 @@ const map = new Map<string, string>(
 )
 
 export function convert(source: number): string {
+	if (!Number.isFinite(source)) {
+		throw new Error('Source is not a finite number')
+	}
 	const sourceString = source.toString()
 	let result = ''
 	for (const letter of sourceString) {
