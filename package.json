@@ -3,7 +3,8 @@
 	"private": true,
 	"workspaces": [
 		"packages/eastern-arabic",
-		"packages/numerals-client"
+		"packages/numerals-client",
+		"packages/numerals-web"
 	],
 	"version": "0.0.1",
 	"author": "Amer Harb",
