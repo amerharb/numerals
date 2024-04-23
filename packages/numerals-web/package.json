@@ -1,0 +1,33 @@
+{
+	"name": "numerals-web",
+	"private": true,
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start -p 8080",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"test": "jest"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.11.1",
+		"@emotion/styled": "^11.11.0",
+		"@mui/joy": "^5.0.0-beta.11",
+		"@numerals/eastern-arabic": "0.0.1-next.4",
+		"@vercel/analytics": "^1.1.2",
+		"@vercel/speed-insights": "^1.0.9",
+		"next": "^14.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-select": "^5.8.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.12.5",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"eslint": "^8.54.0",
+		"eslint-config-next": "^14.1.0",
+		"typescript": "^5.4.4"
+	}
+}
