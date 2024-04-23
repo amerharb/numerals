@@ -1,4 +1,4 @@
-// import { convert } from '@numerals/eastern-arabic'
+import { convert } from '@numerals/eastern-arabic'
 
 log('@numerals/eastern-arabic')
 
@@ -12,8 +12,7 @@ log('Done')
 
 function calmConvert(source: number): string {
 	try {
-		// return convert(source)
-		return 'disable temporarily'
+		return convert(source)
 	} catch (e: any) {
 		return e.message
 	}

@@ -10,5 +10,8 @@
 		"dev": "npx ts-node src/index.ts",
 		"lint": "npx eslint . --max-warnings 0",
 		"lint:fix": "npx eslint . --fix"
+	},
+	"dependencies": {
+		"@numerals/eastern-arabic": "0.0.1-next.4"
 	}
 }
