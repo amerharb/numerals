@@ -3,6 +3,7 @@
 	"private": true,
 	"workspaces": [
 		"packages/eastern-arabic",
+		"packages/mayan",
 		"packages/numerals-client",
 		"packages/numerals-web"
 	],

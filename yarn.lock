@@ -1313,6 +1313,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@numerals/mayan@file:../mayan::locator=numerals-client%40workspace%3Apackages%2Fnumerals-client":
+  version: 0.0.1
+  resolution: "@numerals/mayan@file:../mayan#../mayan::hash=0ba48d&locator=numerals-client%40workspace%3Apackages%2Fnumerals-client"
+  checksum: 10c0/0289f665d192aa31ca12f7a1af4a0de7c3634939419c3333d176516acf7fb482ad9d3b8060b804361c743389f8eec8af7ea430289f0036fffb5df584390ee742
+  languageName: node
+  linkType: hard
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
@@ -5298,6 +5305,7 @@ __metadata:
   resolution: "numerals-client@workspace:packages/numerals-client"
   dependencies:
     "@numerals/eastern-arabic": "npm:0.0.1-next.4"
+    "@numerals/mayan": "file:../mayan"
   languageName: unknown
   linkType: soft
 
