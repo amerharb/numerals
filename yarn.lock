@@ -1315,10 +1315,16 @@ __metadata:
 
 "@numerals/mayan@file:../mayan::locator=numerals-client%40workspace%3Apackages%2Fnumerals-client":
   version: 0.0.1
-  resolution: "@numerals/mayan@file:../mayan#../mayan::hash=0ba48d&locator=numerals-client%40workspace%3Apackages%2Fnumerals-client"
-  checksum: 10c0/0289f665d192aa31ca12f7a1af4a0de7c3634939419c3333d176516acf7fb482ad9d3b8060b804361c743389f8eec8af7ea430289f0036fffb5df584390ee742
+  resolution: "@numerals/mayan@file:../mayan#../mayan::hash=4ca3a2&locator=numerals-client%40workspace%3Apackages%2Fnumerals-client"
+  checksum: 10c0/705df90299bd6146fc3ca6b6483b7ad399b3d009d9fb44f56116620ce30c8480842dfe946c3b3171cfd36111be1e7eb26a7d67fe96fe1d2e22df5a936be91687
   languageName: node
   linkType: hard
+
+"@numerals/mayan@workspace:packages/mayan":
+  version: 0.0.0-use.local
+  resolution: "@numerals/mayan@workspace:packages/mayan"
+  languageName: unknown
+  linkType: soft
 
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
