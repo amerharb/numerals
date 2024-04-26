@@ -12,16 +12,16 @@ const map = new Map<string, string>(
 		['7', Ma['7']],
 		['8', Ma['8']],
 		['9', Ma['9']],
-		['10', Ma['10']],
-		['11', Ma['11']],
-		['12', Ma['12']],
-		['13', Ma['13']],
-		['14', Ma['14']],
-		['15', Ma['15']],
-		['16', Ma['16']],
-		['17', Ma['17']],
-		['18', Ma['18']],
-		['19', Ma['19']],
+		['a', Ma['10']],
+		['b', Ma['11']],
+		['c', Ma['12']],
+		['d', Ma['13']],
+		['e', Ma['14']],
+		['f', Ma['15']],
+		['g', Ma['16']],
+		['h', Ma['17']],
+		['i', Ma['18']],
+		['j', Ma['19']],
 	]
 )
 
@@ -36,7 +36,8 @@ export function convert(source: number): string {
 		throw new Error('Source is not an integer, only integers are supported')
 	}
 
-	const sourceString = source.toString()
+	const base20 = source.toString(20)
+	const sourceString = base20.toString()
 	let result = ''
 	for (const letter of sourceString) {
 		const u = map.get(letter) ?? throwNoNumeralFor(letter)
