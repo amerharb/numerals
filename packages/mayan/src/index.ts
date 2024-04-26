@@ -35,7 +35,7 @@ export function convert(source: number): string {
 	if (source % 1 !== 0) {
 		throw new Error('Source is not an integer, only integers are supported')
 	}
-	
+
 	const sourceString = source.toString()
 	let result = ''
 	for (const letter of sourceString) {
