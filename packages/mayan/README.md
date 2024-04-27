@@ -23,6 +23,9 @@ yarn add @numerals/mayan
 Type Script:
 ```js
 import { convert } from '@numerals/mayan';
-console.log(convert(123)); // ١٢٣
-console.log(convert(123.45)); // ١٢٣٫٤٥
+console.log(convert(0)); // 𝋠
+console.log(convert(1)); // 𝋡
+console.log(convert(10)); // 𝋪
+console.log(convert(19)); // 𝋳
+console.log(convert(20)); // 𝋰𝋠
 ```

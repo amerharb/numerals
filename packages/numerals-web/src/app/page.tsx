@@ -74,11 +74,13 @@ export default function Home() {
 			</div>
 			<hr/>
 			<div style={{ marginTop: '20px', fontSize: '22px' }}>
-				This is an open source project. based on npm package{' '}
+				This is an open source project. based on <Image src="/images/Npm-logo.svg" alt="NPM" width={54} height={21}
+					style={{ width: '54px', height: '21px' }}/> packages:{' '}
 				<a href="https://www.npmjs.com/package/@numerals/eastern-arabic" style={{ textDecoration: 'none' }}>
-					<Image src="/images/Npm-logo.svg" alt="NPM" width={54} height={21}
-								 style={{ width: '54px', height: '21px' }}/>
 					{' '}@numerals/eastern-arabic
+				</a>
+				<a href="https://www.npmjs.com/package/@numerals/mayan" style={{ textDecoration: 'none' }}>
+					{' '}@numerals/mayan
 				</a>
 				<br/>
 				You can find the source code on{' '}
