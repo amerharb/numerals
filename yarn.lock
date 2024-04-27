@@ -1314,9 +1314,9 @@ __metadata:
   linkType: soft
 
 "@numerals/mayan@file:../mayan::locator=numerals-client%40workspace%3Apackages%2Fnumerals-client":
-  version: 0.0.1
-  resolution: "@numerals/mayan@file:../mayan#../mayan::hash=4ca3a2&locator=numerals-client%40workspace%3Apackages%2Fnumerals-client"
-  checksum: 10c0/705df90299bd6146fc3ca6b6483b7ad399b3d009d9fb44f56116620ce30c8480842dfe946c3b3171cfd36111be1e7eb26a7d67fe96fe1d2e22df5a936be91687
+  version: 0.0.1-next.0
+  resolution: "@numerals/mayan@file:../mayan#../mayan::hash=4af073&locator=numerals-client%40workspace%3Apackages%2Fnumerals-client"
+  checksum: 10c0/381b97226ad97ec520844a312138da1bbdb2c4a02ef495b2a2d51665626fb1ef818a9398dc20cae574ebe583cd27c36152a2ad8bf8670177b2a0b1ccd7304503
   languageName: node
   linkType: hard
 
