@@ -22,8 +22,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
 
-      - run: yarn workspaces foreach --all --exclude numerals-web --exclude numerals-client install --immutable
-      - run: yarn workspaces foreach --all --include numerals-web --include numerals-client install
+      - run: yarn workspaces foreach --all --exclude numerals-web --exclude numerals-client --exclude numerals-root install --immutable
+      - run: yarn workspaces foreach --all --include numerals-web --include numerals-client --include numerals-root install
       - run: yarn lint
       - run: yarn build
       - run: yarn test
