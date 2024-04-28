@@ -1,16 +1,21 @@
-import { convert } from '@numerals/eastern-arabic'
+import { convert as ar } from '@numerals/eastern-arabic'
+import { convert as ma } from '@numerals/mayan'
 
 log('@numerals/eastern-arabic')
+log(calmConvert(ar, 123))
+log(calmConvert(ar, 123.456))
+log(calmConvert(ar, -1))
+log(calmConvert(ar, NaN))
 
-log(calmConvert(123))
-log(calmConvert(123.456))
-log(calmConvert(-1))
-log(calmConvert(NaN))
-
+log('@numerals/mayan')
+log(calmConvert(ma, 123))
+log(calmConvert(ma, 123.456))
+log(calmConvert(ma, -1))
+log(calmConvert(ma, NaN))
 
 log('Done')
 
-function calmConvert(source: number): string {
+function calmConvert(convert:(n:number) => string, source: number): string {
 	try {
 		return convert(source)
 	} catch (e: any) {

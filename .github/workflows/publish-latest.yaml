@@ -17,6 +17,8 @@ jobs:
         run: |
           if [[ $TAG_NAME =~ ^eastern-arabic\/v.* ]]; then
               PACKAGE_NAME="eastern-arabic"
+          elif [[ $TAG_NAME =~ ^mayan\/v.* ]]; then
+              PACKAGE_NAME="mayan"
           else
               echo "❌ tag name: $TAG_NAME doesn't point to any publishable package"
               exit 1
@@ -71,8 +73,7 @@ jobs:
       - run: yarn build
       - run: yarn test
 
-      - name: publish @numerals/eastern-arabic @latest to npm
-        if: ${{ env.PACKAGE_NAME == 'eastern-arabic' }}
-        run: yarn workspace @numerals/eastern-arabic npm publish --access public --tag latest
+      - name: publish @numerals package @latest to npm
+        run: yarn workspace @numerals/$PACKAGE_NAME npm publish --access public --tag latest
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.EASTERN_ARABIC_PUBLISH_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NUMERALS_PUBLISH_AUTH_TOKEN }}

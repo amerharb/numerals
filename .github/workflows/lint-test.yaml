@@ -21,7 +21,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-      - run: yarn workspaces foreach --all install --immutable
+
+      - run: yarn workspaces foreach --all install
       - run: yarn lint
       - run: yarn build
       - run: yarn test
