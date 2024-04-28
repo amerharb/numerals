@@ -7,7 +7,7 @@
 
 **@numerals/mayan** is a package for converting number into mayan numeral.
 
-`123 -> ١٢٣`
+`19 -> 𝋳`
 
 ## How to use
 npm:
