@@ -12,6 +12,7 @@
 		"lint:fix": "npx eslint . --fix"
 	},
 	"dependencies": {
-		"@numerals/eastern-arabic": "0.0.1-next.4"
+		"@numerals/eastern-arabic": "0.0.2",
+		"@numerals/mayan": "0.0.1-next.2"
 	}
 }

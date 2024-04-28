@@ -1307,11 +1307,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@numerals/eastern-arabic@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@numerals/eastern-arabic@npm:0.0.2"
+  checksum: 10c0/e68a81453bd3d0db3187744cb8963d8b525f864fe7ac9432ebebacb9483c5f24b09fd18cecf95a897929985b6ea606aa240946043b925fe182d348aac0adcc8e
+  languageName: node
+  linkType: hard
+
 "@numerals/eastern-arabic@workspace:packages/eastern-arabic":
   version: 0.0.0-use.local
   resolution: "@numerals/eastern-arabic@workspace:packages/eastern-arabic"
   languageName: unknown
   linkType: soft
+
+"@numerals/mayan@npm:0.0.1-next.2":
+  version: 0.0.1-next.2
+  resolution: "@numerals/mayan@npm:0.0.1-next.2"
+  checksum: 10c0/aa16e559bc4e835d2e3beb82cc33b78c522053571486332340b35b3bf25f4125a31c5664731b753a85c95a3b918d6ae220f296ad5e7836e92488f005ca382a27
+  languageName: node
+  linkType: hard
 
 "@numerals/mayan@workspace:packages/mayan":
   version: 0.0.0-use.local
@@ -5303,7 +5317,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "numerals-client@workspace:packages/numerals-client"
   dependencies:
-    "@numerals/eastern-arabic": "npm:0.0.1-next.4"
+    "@numerals/eastern-arabic": "npm:0.0.2"
+    "@numerals/mayan": "npm:0.0.1-next.2"
   languageName: unknown
   linkType: soft
 
