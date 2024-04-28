@@ -74,6 +74,6 @@ jobs:
       - run: yarn test
 
       - name: publish @numerals package @next to npm
-        run: yarn workspace @numerals/$PACKAGE_NAME npm publish --access public --tag next
+        run: yarn workspace $PACKAGE_NAME npm publish --access public --tag next
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NUMERALS_PUBLISH_AUTH_TOKEN }}
