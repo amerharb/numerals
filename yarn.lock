@@ -1300,13 +1300,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@numerals/eastern-arabic@npm:0.0.1-next.4":
-  version: 0.0.1-next.4
-  resolution: "@numerals/eastern-arabic@npm:0.0.1-next.4"
-  checksum: 10c0/e28c0374e56a4d6e73ca36acea3737916aba412ba725179463ac355c3cc1170c61cdc4c485649a3aec7a9737562bd3fe56ca7af9c1949f7fc1ba9131327c0245
-  languageName: node
-  linkType: hard
-
 "@numerals/eastern-arabic@npm:0.0.2":
   version: 0.0.2
   resolution: "@numerals/eastern-arabic@npm:0.0.2"
@@ -5346,7 +5339,8 @@ __metadata:
     "@emotion/react": "npm:^11.11.1"
     "@emotion/styled": "npm:^11.11.0"
     "@mui/joy": "npm:^5.0.0-beta.11"
-    "@numerals/eastern-arabic": "npm:0.0.1-next.4"
+    "@numerals/eastern-arabic": "npm:0.0.2"
+    "@numerals/mayan": "npm:0.0.1-next.2"
     "@types/node": "npm:^20.12.5"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"

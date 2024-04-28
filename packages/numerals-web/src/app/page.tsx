@@ -2,11 +2,13 @@
 
 import { useState } from 'react'
 import Select from 'react-select'
-import { convert } from '@numerals/eastern-arabic'
+import { convert as convertAr } from '@numerals/eastern-arabic'
+import { convert as convertMa } from '@numerals/mayan'
 import Image from 'next/image'
 
 enum Numerals {
 	EasternArabic = 'easternArabic',
+	Mayan = 'mayan',
 }
 
 export default function Home() {
@@ -16,6 +18,7 @@ export default function Home() {
 
 	const options = [
 		{ value: Numerals.EasternArabic, label: 'Eastern Arabic ٤ ٣ ٢ ١' },
+		{ value: Numerals.Mayan, label: 'Mayan 𝋠 𝋡 𝋢 𝋣' },
 	]
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
 		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
@@ -31,8 +34,12 @@ export default function Home() {
 				if (!selectedOption?.value) {
 					return
 				}
-				const result = convert(parseFloat(textBoxValue))
-				setResultText(result)
+				try {
+					const result = convert(parseFloat(textBoxValue), selectedOption.value)
+					setResultText(result)
+				} catch (e: any) {
+					setResultText(e.message)
+				}
 			}}
 		/>
 	</div>
@@ -54,8 +61,12 @@ export default function Home() {
 					if (!toValue) {
 						return
 					}
-					const result = convert(parseFloat(e.target.value))
-					setResultText(result)
+					try {
+						const result = convert(parseFloat(e.target.value), toValue)
+						setResultText(result)
+					} catch (e: any) {
+						setResultText(e.message)
+					}
 				}}
 				style={{ padding: '10px', width: '100%', minHeight: '100px', fontSize: '25px' }}
 			/>
@@ -98,4 +109,13 @@ export default function Home() {
 			</div>
 		</main>
 	)
+}
+
+function convert(source: number, to: Numerals): string {
+	switch (to) {
+	case Numerals.EasternArabic:
+		return convertAr(source)
+	case Numerals.Mayan:
+		return convertMa(source)
+	}
 }
