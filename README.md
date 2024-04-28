@@ -6,6 +6,9 @@ This is a monorepo for the Numerals project.
 ### eastern-arabic
 [README](https://github.com/amerharb/numerals/blob/main/packages/eastern-arabic/README.md)
 
+### mayan
+[README](https://github.com/amerharb/numerals/blob/main/packages/mayan/README.md)
+
 ### numerals-client
 Example of a client for npm package
 
