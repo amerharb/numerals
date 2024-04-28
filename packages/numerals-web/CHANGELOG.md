@@ -2,6 +2,10 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.0.2] 2024-04-28
+### Added
+- Add Mayan numeral conversion
+
 ## [0.0.1] 2024-04-23
 ### Added
 - Setup NextJS
