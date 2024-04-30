@@ -628,10 +628,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@numerals/mayan@npm:0.0.1-next.2":
-  version: 0.0.1-next.2
-  resolution: "@numerals/mayan@npm:0.0.1-next.2"
-  checksum: 10c0/aa16e559bc4e835d2e3beb82cc33b78c522053571486332340b35b3bf25f4125a31c5664731b753a85c95a3b918d6ae220f296ad5e7836e92488f005ca382a27
+"@numerals/hieroglyphic@npm:0.0.1-next.3":
+  version: 0.0.1-next.3
+  resolution: "@numerals/hieroglyphic@npm:0.0.1-next.3"
+  checksum: 10c0/8c17098e1b3783ca4affb497c1b4404431895323fe0898337946328c4a06d3047684ff9620103210c58a2f64e8b3d0f0fa324dd9cdfc152e5482e72060493477
+  languageName: node
+  linkType: hard
+
+"@numerals/mayan@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@numerals/mayan@npm:0.0.1"
+  checksum: 10c0/4f3ad2fef351edc9a9a7e8c9853f9567befe2dd474dc97ef2b1fb270e7fd42b5791f77c11a491d1ba5fddb2b036dfc832cfe4d595d1eb179f8122f836c2487d3
   languageName: node
   linkType: hard
 
@@ -2804,7 +2811,8 @@ __metadata:
     "@emotion/styled": "npm:^11.11.0"
     "@mui/joy": "npm:^5.0.0-beta.11"
     "@numerals/eastern-arabic": "npm:0.0.2"
-    "@numerals/mayan": "npm:0.0.1-next.2"
+    "@numerals/hieroglyphic": "npm:0.0.1-next.3"
+    "@numerals/mayan": "npm:0.0.1"
     "@types/node": "npm:^20.12.5"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"

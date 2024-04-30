@@ -3,11 +3,14 @@
 This is a monorepo for the Numerals project.
 
 ## Packages
-### eastern-arabic
+### eastern-arabic ٠١٢٣٤٥٦٧٨٩
 [README](https://github.com/amerharb/numerals/blob/main/packages/eastern-arabic/README.md)
 
-### mayan
+### mayan 𝋠
 [README](https://github.com/amerharb/numerals/blob/main/packages/mayan/README.md)
+
+### hieroglyphic 𓀀
+[README](https://github.com/amerharb/numerals/blob/main/packages/hieroglyphic/README.md)
 
 ### numerals-client
 Example of a client for npm package

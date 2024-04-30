@@ -19,6 +19,8 @@ jobs:
               PACKAGE_NAME="eastern-arabic"
           elif [[ $TAG_NAME =~ ^mayan\/v.* ]]; then
               PACKAGE_NAME="mayan"
+          elif [[ $TAG_NAME =~ ^hieroglyphic\/v.* ]]; then
+              PACKAGE_NAME="hieroglyphic"
           else
               echo "❌ tag name: $TAG_NAME doesn't point to any publishable package"
               exit 1
