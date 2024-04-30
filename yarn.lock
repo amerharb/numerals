@@ -1313,10 +1313,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@numerals/hieroglyphic@npm:0.0.1-next.3":
-  version: 0.0.1-next.3
-  resolution: "@numerals/hieroglyphic@npm:0.0.1-next.3"
-  checksum: 10c0/8c17098e1b3783ca4affb497c1b4404431895323fe0898337946328c4a06d3047684ff9620103210c58a2f64e8b3d0f0fa324dd9cdfc152e5482e72060493477
+"@numerals/hieroglyphic@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@numerals/hieroglyphic@npm:0.0.2"
+  checksum: 10c0/fc8a457b74718dc9db867004dd7e0afc012cb3e6f97b09310a87531e32662bb13f878ca45b46a7cfda681c8b6d966b596b09fe5f6dbe61720acea33f103c1a53
   languageName: node
   linkType: hard
 
@@ -5353,7 +5353,7 @@ __metadata:
     "@emotion/styled": "npm:^11.11.0"
     "@mui/joy": "npm:^5.0.0-beta.11"
     "@numerals/eastern-arabic": "npm:0.0.2"
-    "@numerals/hieroglyphic": "npm:0.0.1-next.3"
+    "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
     "@types/node": "npm:^20.12.5"
     "@types/react": "npm:^18"
