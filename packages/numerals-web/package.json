@@ -1,7 +1,7 @@
 {
 	"name": "numerals-web",
 	"private": true,
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -15,7 +15,7 @@
 		"@emotion/styled": "^11.11.0",
 		"@mui/joy": "^5.0.0-beta.11",
 		"@numerals/eastern-arabic": "0.0.2",
-		"@numerals/hieroglyphic": "0.0.1-next.3",
+		"@numerals/hieroglyphic": "0.0.2",
 		"@numerals/mayan": "0.0.1",
 		"@vercel/analytics": "^1.1.2",
 		"@vercel/speed-insights": "^1.0.9",

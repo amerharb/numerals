@@ -21,7 +21,7 @@ export default function Home() {
 	const options = [
 		{ value: Numerals.EasternArabic, label: 'Eastern Arabic ٤ ٣ ٢ ١' },
 		{ value: Numerals.Mayan, label: 'Mayan 𝋠 𝋡 𝋢 𝋣' },
-		{ value: Numerals.Hieroglyphic, label: 'Hieroglyphic 𓀀 𓀀𓀀 𓀀𓀀𓀀' },
+		{ value: Numerals.Hieroglyphic, label: 'Hieroglyphic 𓁨 𓆐 𓂭 𓆼' },
 	]
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
 		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
