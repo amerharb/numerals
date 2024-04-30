@@ -4,10 +4,11 @@
 	"workspaces": [
 		"packages/eastern-arabic",
 		"packages/mayan",
+		"packages/hieroglyphic",
 		"packages/numerals-client",
 		"packages/numerals-web"
 	],
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"author": "Amer Harb",
 	"license": "ISC",
 	"scripts": {
