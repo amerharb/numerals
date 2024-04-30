@@ -1313,6 +1313,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@numerals/hieroglyphic@workspace:packages/hieroglyphic":
+  version: 0.0.0-use.local
+  resolution: "@numerals/hieroglyphic@workspace:packages/hieroglyphic"
+  languageName: unknown
+  linkType: soft
+
 "@numerals/mayan@npm:0.0.1-next.2":
   version: 0.0.1-next.2
   resolution: "@numerals/mayan@npm:0.0.1-next.2"
