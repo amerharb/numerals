@@ -7,7 +7,7 @@
 
 **@numerals/hieroglyphic** is a package for converting number into hieroglyphic numeral.
 
-`2 -> 𓀀𓀀`
+`2 -> 𓏻`
 
 ## How to use
 npm:
@@ -23,8 +23,8 @@ yarn add @numerals/hieroglyphic
 Type Script:
 ```ts
 import { convert } from '@numerals/hieroglyphic';
-console.log(convert(1)); // 𓀀
-console.log(convert(2)); // 𓀀𓀀
-console.log(convert(10)); // 𓀊
-console.log(convert(1000)); // 𓀪
+console.log(convert(1)); // 𓏺
+console.log(convert(2)); // 𓏻
+console.log(convert(10)); // 𓎆
+console.log(convert(1000)); // 𓂭
 ```

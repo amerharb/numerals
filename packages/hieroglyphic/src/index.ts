@@ -19,14 +19,19 @@ export function convert(source: number): string {
 
 	let result = ''
 	let reminder = source
-	const arr = [1000_000, 100_000, 10_000, 1000, 100, 10, 1] as const
-	while (reminder > 0) {
-		for (const n of arr) {
-			if (reminder - n >= 0) {
-				result += Hi[n]
-				reminder -= n
-				break
-			}
+	const arr = [
+		1000_000, 100_000,
+		90_000, 80_000, 70_000, 60_000, 50_000, 40_000, 30_000, 20_000, 10_000,
+		9000, 8000, 7000, 6000, 5000, 4000, 3000, 2000, 1000,
+		900, 800, 700, 600, 500, 400, 300, 200, 100,
+		90, 80, 70, 60, 50, 40, 30, 20, 10,
+		9, 8, 7, 6, 5, 4, 3, 2, 1
+	] as const
+
+	for (const n of arr) {
+		while (reminder >= n) {
+			result += Hi[n]
+			reminder -= n
 		}
 	}
 
