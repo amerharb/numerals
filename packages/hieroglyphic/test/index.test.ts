@@ -3,31 +3,35 @@ import { Hi } from '../src/numerals'
 import { describe, expect, it } from '@jest/globals'
 
 describe('convert()', () => {
-	it('convert 1 into 𓀀', () => {
+	it('convert 1000_000 into 𓀀', () => {
+		const actual = convert(1000_000)
+		expect(actual).toEqual(Hi[1000_000])
+	})
+	it('convert 1 into 𓏺', () => {
 		const actual = convert(1)
 		expect(actual).toEqual(Hi[1])
 	})
-	it('convert 2 into 𓀀𓀀', () => {
+	it('convert 2 into 𓏻', () => {
 		const actual = convert(2)
-		expect(actual).toEqual(Hi[1] + Hi[1])
+		expect(actual).toEqual(Hi[2])
 	})
-	it('convert 10 into 𓀊', () => {
+	it('convert 10 into 𓎆', () => {
 		const actual = convert(10)
 		expect(actual).toEqual(Hi[10])
 	})
-	it('convert 11 into 𓀊𓀀', () => {
+	it('convert 11 into 𓎆𓏺', () => {
 		const actual = convert(11)
 		expect(actual).toEqual(Hi[10] + Hi[1])
 	})
-	it('convert 100 into 𓀚', () => {
+	it('convert 100 into 𓍢', () => {
 		const actual = convert(100)
 		expect(actual).toEqual(Hi[100])
 	})
-	it('convert 101 into 𓀚𓀀', () => {
+	it('convert 101 into 𓍢𓏺', () => {
 		const actual = convert(101)
 		expect(actual).toEqual(Hi[100] + Hi[1])
 	})
-	it('convert 1000 into 𓀪', () => {
+	it('convert 1000 into 𓆼', () => {
 		const actual = convert(1000)
 		expect(actual).toEqual(Hi[1000])
 	})
