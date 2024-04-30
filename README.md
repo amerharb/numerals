@@ -9,7 +9,7 @@ This is a monorepo for the Numerals project.
 ### mayan 𝋠
 [README](https://github.com/amerharb/numerals/blob/main/packages/mayan/README.md)
 
-### hieroglyphic 𓀀
+### hieroglyphic 𓁨 𓆐 𓂭 𓆼
 [README](https://github.com/amerharb/numerals/blob/main/packages/hieroglyphic/README.md)
 
 ### numerals-client

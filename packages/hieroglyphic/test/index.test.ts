@@ -3,7 +3,7 @@ import { Hi } from '../src/numerals'
 import { describe, expect, it } from '@jest/globals'
 
 describe('convert()', () => {
-	it('convert 1000_000 into 𓀀', () => {
+	it('convert 1000_000 into 𓁨', () => {
 		const actual = convert(1000_000)
 		expect(actual).toEqual(Hi[1000_000])
 	})
