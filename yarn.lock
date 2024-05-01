@@ -1339,6 +1339,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@numerals/roman@workspace:packages/roman":
+  version: 0.0.0-use.local
+  resolution: "@numerals/roman@workspace:packages/roman"
+  languageName: unknown
+  linkType: soft
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
