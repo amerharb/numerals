@@ -39,13 +39,21 @@ export const Ro = {
 	11: numbers[10],
 	12: numbers[11],
 
+	40: numbers[9] + numbers[12],
 	50: numbers[12],
+	90: numbers[9] + numbers[13],
 	100: numbers[13],
+	400: numbers[13] + numbers[14],
 	500: numbers[14],
+	900: numbers[13] + numbers[15],
 	1000: numbers[15],
 
+	4000: numbers[15] + numbers[16],
 	5000: numbers[16],
+	9000: numbers[15] + numbers[17],
 	10_000: numbers[17],
+	40_000: numbers[17] + numbers[18],
 	50_000: numbers[18],
+	90_000: numbers[17] + numbers[19],
 	100_000: numbers[19],
 }
