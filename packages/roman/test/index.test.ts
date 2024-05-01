@@ -19,6 +19,10 @@ describe('convert()', () => {
 		const actual = convert(4)
 		expect(actual).toEqual(Ro[4])
 	})
+	it('convert 8 into Ⅷ', () => {
+		const actual = convert(8)
+		expect(actual).toEqual(Ro[8])
+	})
 	it('convert 9 into Ⅸ', () => {
 		const actual = convert(9)
 		expect(actual).toEqual(Ro[9])
@@ -42,6 +46,18 @@ describe('convert()', () => {
 	it('convert 14 into ⅩⅣ', () => {
 		const actual = convert(14)
 		expect(actual).toEqual(Ro[10] + Ro[4])
+	})
+	it('convert 24 into ⅩⅩⅧ', () => {
+		const actual = convert(24)
+		expect(actual).toEqual(Ro[10] + Ro[10] + Ro[4])
+	})
+	it('convert 28 into ⅩⅩ', () => {
+		const actual = convert(24)
+		expect(actual).toEqual(Ro[10] + Ro[10] + Ro[4])
+	})
+	it('convert 114 into ⅭⅩⅣ', () => {
+		const actual = convert(114)
+		expect(actual).toEqual(Ro[100] + Ro[10] + Ro[4])
 	})
 	it('convert 100 into Ⅽ', () => {
 		const actual = convert(100)
