@@ -7,7 +7,7 @@
 
 **@numerals/roman** is a package for converting number into roman numeral.
 
-`2 -> 𓏻`
+`8 -> Ⅷ`
 
 ## How to use
 npm:
@@ -23,8 +23,9 @@ yarn add @numerals/roman
 Type Script:
 ```ts
 import { convert } from '@numerals/roman';
-console.log(convert(1)); // 𓏺
-console.log(convert(2)); // 𓏻
-console.log(convert(10)); // 𓎆
-console.log(convert(1000)); // 𓂭
+console.log(convert(1)); // Ⅰ
+console.log(convert(8)); // Ⅷ
+console.log(convert(12)); // Ⅻ
+console.log(convert(5000)); // ↁ
+console.log(convert(10_000)); // ↂ
 ```
