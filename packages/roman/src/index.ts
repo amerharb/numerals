@@ -21,7 +21,7 @@ export function convert(source: number): string {
 	let reminder = source
 	const arr = [
 		100_000, 50_000, 10_000, 5000,
-		1000, 5000, 100, 50,
+		1000, 500, 100, 50,
 		12, 11, 10, 9,
 		8, 7, 6, 5, 4, 3, 2, 1,
 	] as const

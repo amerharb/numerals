@@ -39,13 +39,31 @@ describe('convert()', () => {
 		const actual = convert(101)
 		expect(actual).toEqual(Ro[100] + Ro[1])
 	})
+	it('convert 500 into Ⅾ', () => {
+		const actual = convert(500)
+		expect(actual).toEqual(Ro[500])
+	})
 	it('convert 1000 into Ⅿ', () => {
 		const actual = convert(1000)
 		expect(actual).toEqual(Ro[1000])
 	})
+	it('convert 5000 into ↁ', () => {
+		const actual = convert(5000)
+		expect(actual).toEqual(Ro[5000])
+	})
 	it('convert 100_000 into ↈ', () => {
 		const actual = convert(100_000)
 		expect(actual).toEqual(Ro[100_000])
+	})
+	it.each([
+		100_000, 50_000, 10_000, 5000,
+		1000, 500, 100, 50,
+		12, 11, 10, 9,
+		8, 7, 6, 5, 4, 3, 2, 1,
+	])
+	('convert %s to correct roman', (it) => {
+		const actual = convert(it)
+		expect(actual).toEqual(Ro[it as keyof typeof Ro])
 	})
 	it.each([NaN, Infinity, -Infinity])
 	('throw Error for non number [%s]', (it) => {
