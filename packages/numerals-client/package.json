@@ -1,7 +1,7 @@
 {
 	"name": "numerals-client",
 	"private": true,
-	"version": "0.0.1",
+	"version": "0.0.4",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "rm -rf dist && tsc",
@@ -13,6 +13,8 @@
 	},
 	"dependencies": {
 		"@numerals/eastern-arabic": "0.0.2",
-		"@numerals/mayan": "0.0.1"
+		"@numerals/mayan": "0.0.1",
+		"@numerals/hieroglyphic": "0.0.2",
+		"@numerals/roman": "0.0.1"
 	}
 }
