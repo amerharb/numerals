@@ -12,6 +12,9 @@ This is a monorepo for the Numerals project.
 ### hieroglyphic 𓁨 𓆐 𓂭 𓆼
 [README](https://github.com/amerharb/numerals/blob/main/packages/hieroglyphic/README.md)
 
+### roman I V X L C D M
+[README](https://github.com/amerharb/numerals/blob/main/packages/roman/README.md)
+
 ### numerals-client
 Example of a client for npm package
 
