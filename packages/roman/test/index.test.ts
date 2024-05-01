@@ -35,11 +35,11 @@ describe('convert()', () => {
 		const actual = convert(12)
 		expect(actual).toEqual(Ro[12])
 	})
-	it.skip('convert 13 into ⅩⅢ', () => {
+	it('convert 13 into ⅩⅢ', () => {
 		const actual = convert(13)
 		expect(actual).toEqual(Ro[10] + Ro[3])
 	})
-	it.skip('convert 14 into ⅩⅣ', () => {
+	it('convert 14 into ⅩⅣ', () => {
 		const actual = convert(14)
 		expect(actual).toEqual(Ro[10] + Ro[4])
 	})

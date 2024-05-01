@@ -19,14 +19,21 @@ export function convert(source: number): string {
 
 	let result = ''
 	let reminder = source
-	const arr = [
+	const anchorArr = [
 		100_000, 50_000, 10_000, 5000,
 		1000, 500, 100, 50,
-		12, 11, 10, 9,
-		8, 7, 6, 5, 4, 3, 2, 1,
+		10, 5, 1,
+	] as const
+	const matchArr = [
+		12, 11, 9, 8, 7, 6, 4, 3, 2,
 	] as const
 
-	for (const n of arr) {
+	for (const n of anchorArr) {
+		const match = matchArr.find((it) => it === reminder)
+		if (match !== undefined) {
+			result += Ro[match]
+			break
+		}
 		while (reminder >= n) {
 			result += Ro[n]
 			reminder -= n
