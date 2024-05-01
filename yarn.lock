@@ -5370,6 +5370,7 @@ __metadata:
     "@numerals/eastern-arabic": "npm:0.0.2"
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
+    "@numerals/roman": "npm:0.0.1"
     "@types/node": "npm:^20.12.5"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"

@@ -5,12 +5,14 @@ import Select from 'react-select'
 import { convert as convertAr } from '@numerals/eastern-arabic'
 import { convert as convertMa } from '@numerals/mayan'
 import { convert as convertHi } from '@numerals/hieroglyphic'
+import { convert as convertRo } from '@numerals/roman'
 import Image from 'next/image'
 
 enum Numerals {
     EasternArabic = 'easternArabic',
     Mayan = 'mayan',
     Hieroglyphic = 'hieroglyphic',
+	  Roman = 'roman',
 }
 
 export default function Home() {
@@ -22,6 +24,7 @@ export default function Home() {
 		{ value: Numerals.EasternArabic, label: 'Eastern Arabic ٤ ٣ ٢ ١' },
 		{ value: Numerals.Mayan, label: 'Mayan 𝋠 𝋡 𝋢 𝋣' },
 		{ value: Numerals.Hieroglyphic, label: 'Hieroglyphic 𓁨 𓆐 𓂭 𓆼' },
+		{ value: Numerals.Roman, label: 'Roman Ⅰ Ⅱ Ⅲ Ⅳ' },
 	]
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
 		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
@@ -126,5 +129,7 @@ function convert(source: number, to: Numerals): string {
 		return convertMa(source)
 	case Numerals.Hieroglyphic:
 		return convertHi(source)
+	case Numerals.Roman:
+		return convertRo(source)
 	}
 }
