@@ -7,7 +7,7 @@
 
 **@numerals/aegean** is a package for converting number into aegean numeral.
 
-`2 -> 𓏻`
+`1000 -> 𐄢`
 
 ## How to use
 npm:
@@ -23,8 +23,8 @@ yarn add @numerals/aegean
 Type Script:
 ```ts
 import { convert } from '@numerals/aegean';
-console.log(convert(1)); // 𓏺
-console.log(convert(2)); // 𓏻
-console.log(convert(10)); // 𓎆
-console.log(convert(1000)); // 𓂭
+console.log(convert(1)); // 𐄇
+console.log(convert(2)); // 𐄈
+console.log(convert(10)); // 𐄐
+console.log(convert(1000)); // 𐄢
 ```
