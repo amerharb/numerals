@@ -20,8 +20,8 @@ export function convert(source: number): string {
 	let result = ''
 	let reminder = source
 	const anchorArr = [
-		100_000, 50_000, 10_000, 5000,
-		1000, 500, 100, 50,
+		100_000, 90_000, 50_000, 40_000, 10_000, 9000, 5000, 4000,
+		1000, 900, 500, 400, 100, 90, 50, 40,
 		10, 5, 1,
 	] as const
 	const matchArr = [
