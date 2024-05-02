@@ -54,13 +54,13 @@ export default function Home() {
 		<main style={{ textAlign: 'center', padding: '20px' }}>
 			<h1>Numerals Converter</h1>
 			{ToSelect()}
-			<label htmlFor="editTextBox" style={{ marginRight: '10px' }}>
-                Enter Text:
+			<label htmlFor="numberInput" style={{ marginRight: '10px' }}>
+				Enter Number:
 			</label>
 			<textarea
 				id="editTextBox"
 				dir="auto"
-				placeholder="Type here"
+				placeholder="Type number here"
 				value={textBoxValue}
 				onChange={(e) => {
 					setTextBoxValue(e.target.value)
