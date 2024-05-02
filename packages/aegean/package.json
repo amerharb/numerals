@@ -1,0 +1,38 @@
+{
+	"name": "@numerals/aegean",
+	"version": "0.0.1",
+	"main": "dist/src/index.js",
+	"types": "dist/src/index.d.ts",
+	"files": [
+		"dist/src/**/*.d.ts",
+		"dist/src/**/*.js",
+		"LICENSE",
+		"CHANGELOG.md",
+		"README.md"
+	],
+	"author": "Amer Harb",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/amerharb/numerals.git"
+	},
+	"homepage": "https://github.com/amerharb/numerals#readme",
+	"url": "https://github.com/amerharb/numerals/issues",
+	"email": "numerals@amerharb.com",
+	"keywords": [
+		"aegean-numerals",
+		"aegean-numbers"
+	],
+	"license": "ISC",
+	"scripts": {
+		"build": "rm -rf dist && tsc",
+		"start": "node dist/src/index.js",
+		"test": "jest",
+		"make-coverage-badge": "npx make-coverage-badge --report-path coverage/coverage-summary.json --output-path badges/coverage.svg",
+		"dev": "ts-node src/index.ts",
+		"lint": "npx eslint . --max-warnings 0",
+		"lint:fix": "npx eslint . --fix"
+	},
+	"bugs": {
+		"url": "https://github.com/amerharb/numerals/issues"
+	}
+}
