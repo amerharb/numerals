@@ -6,10 +6,11 @@
 		"packages/mayan",
 		"packages/hieroglyphic",
 		"packages/roman",
+		"packages/aegean",
 		"packages/numerals-client",
 		"packages/numerals-web"
 	],
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"author": "Amer Harb",
 	"license": "ISC",
 	"scripts": {

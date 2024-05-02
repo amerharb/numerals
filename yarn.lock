@@ -1300,6 +1300,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@numerals/aegean@workspace:packages/aegean":
+  version: 0.0.0-use.local
+  resolution: "@numerals/aegean@workspace:packages/aegean"
+  languageName: unknown
+  linkType: soft
+
 "@numerals/eastern-arabic@npm:0.0.2":
   version: 0.0.2
   resolution: "@numerals/eastern-arabic@npm:0.0.2"

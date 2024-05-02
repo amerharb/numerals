@@ -23,6 +23,8 @@ jobs:
               PACKAGE_NAME="hieroglyphic"
           elif [[ $TAG_NAME =~ ^roman\/v.* ]]; then
               PACKAGE_NAME="roman"
+          elif [[ $TAG_NAME =~ ^aegean\/v.* ]]; then
+              PACKAGE_NAME="aegean"
           else
               echo "❌ tag name: $TAG_NAME doesn't point to any publishable package"
               exit 1
