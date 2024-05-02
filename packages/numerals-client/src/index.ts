@@ -2,6 +2,7 @@ import { convert as ar } from '@numerals/eastern-arabic'
 import { convert as ma } from '@numerals/mayan'
 import { convert as hi } from '@numerals/hieroglyphic'
 import { convert as ro } from '@numerals/roman'
+import { convert as ag } from '@numerals/aegean'
 
 log('@numerals/eastern-arabic')
 log(calmConvert(ar, 123))
@@ -26,6 +27,12 @@ log(calmConvert(ro, 123))
 log(calmConvert(ro, 123.456))
 log(calmConvert(ro, -1))
 log(calmConvert(ro, NaN))
+
+log('@numerals/aegean')
+log(calmConvert(ag, 123))
+log(calmConvert(ag, 123.456))
+log(calmConvert(ag, -1))
+log(calmConvert(ag, NaN))
 
 log('Done')
 

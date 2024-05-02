@@ -12,9 +12,10 @@
 		"lint:fix": "npx eslint . --fix"
 	},
 	"dependencies": {
+		"@numerals/aegean": "0.0.1",
 		"@numerals/eastern-arabic": "0.0.2",
 		"@numerals/hieroglyphic": "0.0.2",
 		"@numerals/mayan": "0.0.1",
-		"@numerals/roman": "0.0.1"
+		"@numerals/roman": "0.0.2"
 	}
 }

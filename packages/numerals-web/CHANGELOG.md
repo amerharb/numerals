@@ -2,6 +2,10 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.5.0] 2024-5-02
+### Added
+- Add Aegean numeral conversion
+
 ## [0.4.1] 2024-5-01
 ### Changed
 - Use roman v0.0.2
