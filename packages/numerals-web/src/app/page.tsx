@@ -9,10 +9,10 @@ import { convert as convertRo } from '@numerals/roman'
 import Image from 'next/image'
 
 enum Numerals {
-    EasternArabic = 'easternArabic',
-    Mayan = 'mayan',
-    Hieroglyphic = 'hieroglyphic',
-	  Roman = 'roman',
+	EasternArabic = 'easternArabic',
+	Mayan = 'mayan',
+	Hieroglyphic = 'hieroglyphic',
+	Roman = 'roman',
 }
 
 export default function Home() {
