@@ -1346,6 +1346,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@numerals/roman@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@numerals/roman@npm:0.0.2"
+  checksum: 10c0/7090781316b0051c5262997cd15ad2b9662448330e85125bd4079bd0a5035526cc35f5dccb12eec665571a0780f5b91c1e537b1b04c7268fa6ed814a69680286
+  languageName: node
+  linkType: hard
+
 "@numerals/roman@workspace:packages/roman":
   version: 0.0.0-use.local
   resolution: "@numerals/roman@workspace:packages/roman"
@@ -5370,7 +5377,7 @@ __metadata:
     "@numerals/eastern-arabic": "npm:0.0.2"
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
-    "@numerals/roman": "npm:0.0.1"
+    "@numerals/roman": "npm:0.0.2"
     "@types/node": "npm:^20.12.5"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"

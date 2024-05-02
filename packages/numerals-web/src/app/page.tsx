@@ -9,10 +9,10 @@ import { convert as convertRo } from '@numerals/roman'
 import Image from 'next/image'
 
 enum Numerals {
-    EasternArabic = 'easternArabic',
-    Mayan = 'mayan',
-    Hieroglyphic = 'hieroglyphic',
-	  Roman = 'roman',
+	EasternArabic = 'easternArabic',
+	Mayan = 'mayan',
+	Hieroglyphic = 'hieroglyphic',
+	Roman = 'roman',
 }
 
 export default function Home() {
@@ -54,25 +54,31 @@ export default function Home() {
 		<main style={{ textAlign: 'center', padding: '20px' }}>
 			<h1>Numerals Converter</h1>
 			{ToSelect()}
-			<label htmlFor="editTextBox" style={{ marginRight: '10px' }}>
-                Enter Text:
+			<label htmlFor="numberInput" style={{ marginRight: '10px' }}>
+				Enter Number:
 			</label>
 			<textarea
 				id="editTextBox"
 				dir="auto"
-				placeholder="Type here"
+				placeholder="Type number here"
 				value={textBoxValue}
 				onChange={(e) => {
 					setTextBoxValue(e.target.value)
 					if (!toValue) {
 						return
 					}
-					try {
-						const result = convert(parseFloat(e.target.value), toValue)
-						setResultText(result)
-					} catch (e: any) {
-						setResultText(e.message)
-					}
+					const lines = e.target.value.split(/\n+|\s+/).map((line) => line.trim())
+					let result = ''
+					lines.forEach((line) => {
+						if (line.length === 0) return
+						try {
+							const converted = convert(parseFloat(line), toValue)
+							result += `${converted}\n`
+						} catch (e: any) {
+							result += `${e.message}\n`
+						}
+					})
+					setResultText(result)
 				}}
 				style={{ padding: '10px', width: '100%', minHeight: '100px', fontSize: '25px' }}
 			/>
