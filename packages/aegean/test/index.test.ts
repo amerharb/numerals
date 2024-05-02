@@ -48,4 +48,8 @@ describe('convert()', () => {
 		const actual = () => convert(1.1)
 		expect(actual).toThrowError('Source is not an integer, only integers are supported')
 	})
+	it('throw Error for number greater than 99,999', () => {
+		const actual = () => convert(100_000)
+		expect(actual).toThrowError('Source is too big, only numbers up to 99,999 are supported')
+	})
 })
