@@ -67,12 +67,18 @@ export default function Home() {
 					if (!toValue) {
 						return
 					}
-					try {
-						const result = convert(parseFloat(e.target.value), toValue)
-						setResultText(result)
-					} catch (e: any) {
-						setResultText(e.message)
-					}
+					const lines = e.target.value.split(/\n+|\s+/).map((line) => line.trim())
+					let result = ''
+					lines.forEach((line) => {
+						if (line.length === 0) return
+						try {
+							const converted = convert(parseFloat(line), toValue)
+							result += `${converted}\n`
+						} catch (e: any) {
+							result += `${e.message}\n`
+						}
+					})
+					setResultText(result)
 				}}
 				style={{ padding: '10px', width: '100%', minHeight: '100px', fontSize: '25px' }}
 			/>
