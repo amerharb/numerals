@@ -1300,6 +1300,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@numerals/aegean@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@numerals/aegean@npm:0.0.1"
+  checksum: 10c0/cccd9f15aed7b1f112087fb95ee0e84137852b6fa3fac9900703e2603b444622a9710b66457feb4476a948277ad3e9cadbf5c400560367c69accd0a16a3201cb
+  languageName: node
+  linkType: hard
+
 "@numerals/aegean@workspace:packages/aegean":
   version: 0.0.0-use.local
   resolution: "@numerals/aegean@workspace:packages/aegean"
@@ -1344,13 +1351,6 @@ __metadata:
   resolution: "@numerals/mayan@workspace:packages/mayan"
   languageName: unknown
   linkType: soft
-
-"@numerals/roman@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@numerals/roman@npm:0.0.1"
-  checksum: 10c0/70b0a9b1c9689107b3a1b0519c1cc477bb94ba7d3690d1f4f4b05ccbea398ffadff58dbf571ab55a76c43c0cfbd20b2c03a15361bcc5c54affc6ef398bc14058
-  languageName: node
-  linkType: hard
 
 "@numerals/roman@npm:0.0.2":
   version: 0.0.2
@@ -5349,10 +5349,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "numerals-client@workspace:packages/numerals-client"
   dependencies:
+    "@numerals/aegean": "npm:0.0.1"
     "@numerals/eastern-arabic": "npm:0.0.2"
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
-    "@numerals/roman": "npm:0.0.1"
+    "@numerals/roman": "npm:0.0.2"
   languageName: unknown
   linkType: soft
 
@@ -5380,6 +5381,7 @@ __metadata:
     "@emotion/react": "npm:^11.11.1"
     "@emotion/styled": "npm:^11.11.0"
     "@mui/joy": "npm:^5.0.0-beta.11"
+    "@numerals/aegean": "npm:0.0.1"
     "@numerals/eastern-arabic": "npm:0.0.2"
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"

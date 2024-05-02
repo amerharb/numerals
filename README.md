@@ -15,6 +15,9 @@ This is a monorepo for the Numerals project.
 ### roman I V X L C D M
 [README](https://github.com/amerharb/numerals/blob/main/packages/roman/README.md)
 
+### aegean 𐄇 𐄈 𐄐 𐄢
+[README](https://github.com/amerharb/numerals/blob/main/packages/aegean/README.md)
+
 ### numerals-client
 Example of a client for npm package
 
