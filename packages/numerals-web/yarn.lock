@@ -642,10 +642,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@numerals/roman@npm:0.0.1":
-  version: 0.0.1
-  resolution: "@numerals/roman@npm:0.0.1"
-  checksum: 10c0/70b0a9b1c9689107b3a1b0519c1cc477bb94ba7d3690d1f4f4b05ccbea398ffadff58dbf571ab55a76c43c0cfbd20b2c03a15361bcc5c54affc6ef398bc14058
+"@numerals/roman@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@numerals/roman@npm:0.0.2"
+  checksum: 10c0/7090781316b0051c5262997cd15ad2b9662448330e85125bd4079bd0a5035526cc35f5dccb12eec665571a0780f5b91c1e537b1b04c7268fa6ed814a69680286
   languageName: node
   linkType: hard
 
@@ -2820,7 +2820,7 @@ __metadata:
     "@numerals/eastern-arabic": "npm:0.0.2"
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
-    "@numerals/roman": "npm:0.0.1"
+    "@numerals/roman": "npm:0.0.2"
     "@types/node": "npm:^20.12.5"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"

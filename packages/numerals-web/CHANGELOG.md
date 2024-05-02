@@ -2,6 +2,10 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.4.1] 2024-5-01
+### Changed
+- use roman v0.0.2
+
 ## [0.0.4] 2024-5-01
 ### Added
 - Add Roman numeral conversion
