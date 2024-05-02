@@ -4,7 +4,8 @@
 
 ## [0.4.1] 2024-5-01
 ### Changed
-- use roman v0.0.2
+- Use roman v0.0.2
+- support multi values, enter more than one number
 
 ## [0.0.4] 2024-5-01
 ### Added
