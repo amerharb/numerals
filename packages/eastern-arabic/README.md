@@ -5,7 +5,7 @@
 ![Coverage](https://raw.githubusercontent.com/amerharb/numerals/eastern-arabic/version/0.0.2/packages/eastern-arabic/badges/coverage.svg)
 ![Github workflow](https://github.com/amerharb/numerals/actions/workflows/lint-test.yaml/badge.svg?branch=eastern-arabic/version/0.0.2)
 
-**@numerals/eastern-arabic** is a package for converting number into eastern arabic numeral.
+**@numerals/eastern-arabic** is a package for converting number into Eastern Arabic numeral.
 
 `123 -> ١٢٣`
 

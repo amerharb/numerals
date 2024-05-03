@@ -7,4 +7,4 @@
 
 ## [0.0.1]  2024-03-05
 ### Added
-- Initial project covert number into eastern arabic numerals
+- Initial project covert number into Eastern Arabic numerals

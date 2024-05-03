@@ -8,4 +8,4 @@
 
 ## [0.0.1]  2024-04-30
 ### Added
-- Initial project covert number into hieroglyphic numerals
+- Initial project covert number into Hieroglyphic numerals
