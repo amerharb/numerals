@@ -7,4 +7,4 @@
 
 ## [0.0.1]  2024-05-01
 ### Added
-- Initial project covert number into roman numerals
+- Initial project covert number into Roman numerals

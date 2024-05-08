@@ -5,7 +5,7 @@
 ![Coverage](https://raw.githubusercontent.com/amerharb/numerals/hieroglyphic/version/0.0.2/packages/hieroglyphic/badges/coverage.svg)
 ![Github workflow](https://github.com/amerharb/numerals/actions/workflows/lint-test.yaml/badge.svg?branch=hieroglyphic/version/0.0.2)
 
-**@numerals/hieroglyphic** is a package for converting number into hieroglyphic numeral.
+**@numerals/hieroglyphic** is a package for converting number into Hieroglyphic numeral.
 
 `2 -> 𓏻`
 

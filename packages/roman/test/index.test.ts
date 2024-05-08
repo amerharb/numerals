@@ -136,10 +136,10 @@ describe('convert()', () => {
 		1000, 900, 500, 400, 100, 90, 50, 40,
 		12, 11, 10, 9,
 		8, 7, 6, 5, 4, 3, 2, 1,
-	])
+	] as const)
 	('convert %s to correct roman', (it) => {
 		const actual = convert(it)
-		expect(actual).toEqual(Ro[it as keyof typeof Ro])
+		expect(actual).toEqual(Ro[it])
 	})
 	it.each([NaN, Infinity, -Infinity])
 	('throw Error for non number [%s]', (it) => {

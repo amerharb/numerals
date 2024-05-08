@@ -5,7 +5,7 @@
 ![Coverage](https://raw.githubusercontent.com/amerharb/numerals/mayan/version/0.0.1/packages/mayan/badges/coverage.svg)
 ![Github workflow](https://github.com/amerharb/numerals/actions/workflows/lint-test.yaml/badge.svg?branch=mayan/version/0.0.1)
 
-**@numerals/mayan** is a package for converting number into mayan numeral.
+**@numerals/mayan** is a package for converting number into Mayan numeral.
 
 `19 -> 𝋳`
 

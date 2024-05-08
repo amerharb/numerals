@@ -5,7 +5,7 @@
 ![Coverage](https://raw.githubusercontent.com/amerharb/numerals/aegean/version/0.0.1/packages/aegean/badges/coverage.svg)
 ![Github workflow](https://github.com/amerharb/numerals/actions/workflows/lint-test.yaml/badge.svg?branch=aegean/version/0.0.1)
 
-**@numerals/aegean** is a package for converting number into aegean numeral.
+**@numerals/aegean** is a package for converting number into Aegean numeral.
 
 `1000 -> 𐄢`
 
