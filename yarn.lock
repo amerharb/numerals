@@ -1365,6 +1365,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@numerals/thai@npm:0.0.2":
+  version: 0.0.2
+  resolution: "@numerals/thai@npm:0.0.2"
+  checksum: 10c0/bf328edf0ac97069c9aeb1b035d9df10c0fec00521157dcf08a0e41917a3d9e4143e9c83db1362782e8c58d0fa234c5d1d829ed0f6fc982ac5b6331faff1a058
+  languageName: node
+  linkType: hard
+
 "@numerals/thai@workspace:packages/thai":
   version: 0.0.0-use.local
   resolution: "@numerals/thai@workspace:packages/thai"
@@ -5360,6 +5367,7 @@ __metadata:
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
     "@numerals/roman": "npm:0.0.2"
+    "@numerals/thai": "npm:0.0.2"
   languageName: unknown
   linkType: soft
 
@@ -5392,6 +5400,7 @@ __metadata:
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
     "@numerals/roman": "npm:0.0.2"
+    "@numerals/thai": "npm:0.0.2"
     "@types/node": "npm:^20.12.5"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
