@@ -1365,6 +1365,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@numerals/thai@workspace:packages/thai":
+  version: 0.0.0-use.local
+  resolution: "@numerals/thai@workspace:packages/thai"
+  languageName: unknown
+  linkType: soft
+
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
   resolution: "@pkgjs/parseargs@npm:0.11.0"
