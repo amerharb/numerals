@@ -59,7 +59,6 @@ export default function Home() {
 	return (
 		<main style={{ textAlign: 'center', padding: '20px' }}>
 			<h1>Numerals Converter</h1>
-			{ToSelect()}
 			<label htmlFor="numberInput" style={{ marginRight: '10px' }}>
 				Enter Number:
 			</label>
@@ -88,6 +87,7 @@ export default function Home() {
 				}}
 				style={{ padding: '10px', width: '100%', minHeight: '100px', fontSize: '25px' }}
 			/>
+			{ToSelect()}
 			<div>
 				<label htmlFor="resultLabel" style={{ marginRight: '10px' }}>
                     Result:
