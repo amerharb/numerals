@@ -3,6 +3,7 @@ import { convert as ma } from '@numerals/mayan'
 import { convert as hi } from '@numerals/hieroglyphic'
 import { convert as ro } from '@numerals/roman'
 import { convert as ag } from '@numerals/aegean'
+import { convert as th } from '@numerals/thai'
 
 log('@numerals/eastern-arabic')
 log(calmConvert(ar, 123))
@@ -33,6 +34,12 @@ log(calmConvert(ag, 123))
 log(calmConvert(ag, 123.456))
 log(calmConvert(ag, -1))
 log(calmConvert(ag, NaN))
+
+log('@numerals/thai')
+log(calmConvert(th, 123))
+log(calmConvert(th, 123.456))
+log(calmConvert(th, -1))
+log(calmConvert(th, NaN))
 
 log('Done')
 

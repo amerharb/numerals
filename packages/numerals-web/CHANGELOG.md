@@ -2,6 +2,12 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.6.0] 2024-5-09
+### Added
+- Add Thai numeral conversion
+### Changed
+- Order of page, input first then select numerals
+
 ## [0.5.0] 2024-5-02
 ### Added
 - Add Aegean numeral conversion
