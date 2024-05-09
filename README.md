@@ -18,6 +18,9 @@ This is a monorepo for the Numerals project.
 ### aegean 𐄇 𐄈 𐄐 𐄢
 [README](https://github.com/amerharb/numerals/blob/main/packages/aegean/README.md)
 
+### thai ๐๑๒๓๔๕๖๗๘๙
+[README](https://github.com/amerharb/numerals/blob/main/packages/thai/README.md)
+
 ### numerals-client
 Example of a client for npm package
 
