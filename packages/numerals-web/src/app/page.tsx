@@ -7,6 +7,7 @@ import { convert as convertMa } from '@numerals/mayan'
 import { convert as convertHi } from '@numerals/hieroglyphic'
 import { convert as convertRo } from '@numerals/roman'
 import { convert as convertAg } from '@numerals/aegean'
+import { convert as convertTh } from '@numerals/thai'
 import Image from 'next/image'
 
 enum Numerals {
@@ -15,6 +16,7 @@ enum Numerals {
 	Hieroglyphic = 'hieroglyphic',
 	Roman = 'roman',
 	Aegean = 'aegean',
+	Thai = 'thai',
 }
 
 export default function Home() {
@@ -28,6 +30,7 @@ export default function Home() {
 		{ value: Numerals.Hieroglyphic, label: 'Hieroglyphic 𓁨 𓆐 𓂭 𓆼' },
 		{ value: Numerals.Roman, label: 'Roman Ⅰ Ⅱ Ⅲ Ⅳ' },
 		{ value: Numerals.Aegean, label: 'Aegean 𐄇 𐄈 𐄐 𐄙' },
+		{ value: Numerals.Thai, label: 'Thai ๑ ๒ ๓ ๔' },
 	]
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
 		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
@@ -124,6 +127,10 @@ export default function Home() {
 					{' '}@numerals/aegean
 				</a>
 				<br/>
+				<a href="https://www.npmjs.com/package/@numerals/thai" style={{ textDecoration: 'none' }}>
+					{' '}@numerals/thai
+				</a>
+				<br/>
 				You can find the source code on{' '}
 				<a href="https://www.github.com/amerharb/numerals" style={{ textDecoration: 'none' }}>
 					<Image src="/images/Github-logo.svg" alt="GitHub" width={32}
@@ -153,5 +160,7 @@ function convert(source: number, to: Numerals): string {
 		return convertRo(source)
 	case Numerals.Aegean:
 		return convertAg(source)
+	case Numerals.Thai:
+		return convertTh(source)
 	}
 }

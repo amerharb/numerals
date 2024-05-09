@@ -3,7 +3,7 @@
 
 ## [0.6.0]  2024-05-08
 ### Added
-- Add THAI numeral package
+- Add Thai numeral package
 
 ## [0.5.0]  2024-05-02
 ### Added
