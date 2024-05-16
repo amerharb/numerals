@@ -8,6 +8,7 @@ import { convert as convertHi } from '@numerals/hieroglyphic'
 import { convert as convertRo } from '@numerals/roman'
 import { convert as convertAg } from '@numerals/aegean'
 import { convert as convertTh } from '@numerals/thai'
+import { convert as convertHr } from '@numerals/hanifi-rohingya'
 import Image from 'next/image'
 
 enum Numerals {
@@ -17,6 +18,7 @@ enum Numerals {
 	Roman = 'roman',
 	Aegean = 'aegean',
 	Thai = 'thai',
+	hanifiRohingya = 'hanifi-rohingya',
 }
 
 export default function Home() {
@@ -31,6 +33,7 @@ export default function Home() {
 		{ value: Numerals.Roman, label: 'Roman Ⅰ Ⅱ Ⅲ Ⅳ' },
 		{ value: Numerals.Aegean, label: 'Aegean 𐄇 𐄈 𐄐 𐄙' },
 		{ value: Numerals.Thai, label: 'Thai ๑ ๒ ๓ ๔' },
+		{ value: Numerals.hanifiRohingya, label: 'Hanifi Rohingya 𐴐 𐴑 𐴒 𐴓' },
 	]
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
 		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
@@ -107,30 +110,36 @@ export default function Home() {
 					height={21}
 					style={{ width: '54px', height: '21px' }}/> packages:{' '}
 				<br/>
-				<a href="https://www.npmjs.com/package/@numerals/eastern-arabic" style={{ textDecoration: 'none' }}>
-					{' '}@numerals/eastern-arabic
-				</a>
-				<br/>
-				<a href="https://www.npmjs.com/package/@numerals/mayan" style={{ textDecoration: 'none' }}>
-					{' '}@numerals/mayan
-				</a>
-				<br/>
-				<a href="https://www.npmjs.com/package/@numerals/hieroglyphic" style={{ textDecoration: 'none' }}>
-					{' '}@numerals/hieroglyphic
-				</a>
-				<br/>
-				<a href="https://www.npmjs.com/package/@numerals/roman" style={{ textDecoration: 'none' }}>
-					{' '}@numerals/roman
-				</a>
-				<br/>
-				<a href="https://www.npmjs.com/package/@numerals/aegean" style={{ textDecoration: 'none' }}>
-					{' '}@numerals/aegean
-				</a>
-				<br/>
-				<a href="https://www.npmjs.com/package/@numerals/thai" style={{ textDecoration: 'none' }}>
-					{' '}@numerals/thai
-				</a>
-				<br/>
+				<div style={{ marginTop: '20px', fontSize: '18px' }}>
+					<a href="https://www.npmjs.com/package/@numerals/eastern-arabic" style={{ textDecoration: 'none' }}>
+						{' '}@numerals/eastern-arabic
+					</a>
+					<br/>
+					<a href="https://www.npmjs.com/package/@numerals/mayan" style={{ textDecoration: 'none' }}>
+						{' '}@numerals/mayan
+					</a>
+					<br/>
+					<a href="https://www.npmjs.com/package/@numerals/hieroglyphic" style={{ textDecoration: 'none' }}>
+						{' '}@numerals/hieroglyphic
+					</a>
+					<br/>
+					<a href="https://www.npmjs.com/package/@numerals/roman" style={{ textDecoration: 'none' }}>
+						{' '}@numerals/roman
+					</a>
+					<br/>
+					<a href="https://www.npmjs.com/package/@numerals/aegean" style={{ textDecoration: 'none' }}>
+						{' '}@numerals/aegean
+					</a>
+					<br/>
+					<a href="https://www.npmjs.com/package/@numerals/thai" style={{ textDecoration: 'none' }}>
+						{' '}@numerals/thai
+					</a>
+					<br/>
+					<a href="https://www.npmjs.com/package/@numerals/hanifi-rohingya" style={{ textDecoration: 'none' }}>
+						{' '}@numerals/hanifi-rohingya
+					</a>
+					<br/>
+				</div>
 				You can find the source code on{' '}
 				<a href="https://www.github.com/amerharb/numerals" style={{ textDecoration: 'none' }}>
 					<Image src="/images/Github-logo.svg" alt="GitHub" width={32}
@@ -162,5 +171,7 @@ function convert(source: number, to: Numerals): string {
 		return convertAg(source)
 	case Numerals.Thai:
 		return convertTh(source)
+	case Numerals.hanifiRohingya:
+		return convertHr(source)
 	}
 }

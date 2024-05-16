@@ -1326,6 +1326,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@numerals/hanifi-rohingya@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@numerals/hanifi-rohingya@npm:0.0.1"
+  checksum: 10c0/57055593dd87b918d61b31a7c967beb54d9e4d03755314bdf0a855180bac3e39125fe3b2fff5b94d0b3096053032134b2bfbaf772fb63a55e220f9c1781f14c0
+  languageName: node
+  linkType: hard
+
 "@numerals/hanifi-rohingya@workspace:packages/hanifi-rohingya":
   version: 0.0.0-use.local
   resolution: "@numerals/hanifi-rohingya@workspace:packages/hanifi-rohingya"
@@ -5370,6 +5377,7 @@ __metadata:
   dependencies:
     "@numerals/aegean": "npm:0.0.1"
     "@numerals/eastern-arabic": "npm:0.0.2"
+    "@numerals/hanifi-rohingya": "npm:0.0.1"
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
     "@numerals/roman": "npm:0.0.2"
@@ -5403,6 +5411,7 @@ __metadata:
     "@mui/joy": "npm:^5.0.0-beta.11"
     "@numerals/aegean": "npm:0.0.1"
     "@numerals/eastern-arabic": "npm:0.0.2"
+    "@numerals/hanifi-rohingya": "npm:0.0.1"
     "@numerals/hieroglyphic": "npm:0.0.2"
     "@numerals/mayan": "npm:0.0.1"
     "@numerals/roman": "npm:0.0.2"
