@@ -26,3 +26,6 @@ import { convert } from '@numerals/hanifi-rohingya';
 console.log(convert(123)); // 𐴱𐴲𐴳
 console.log(convert(123.45)); // 𐴱𐴲𐴳.𐴴𐴵
 ```
+
+## Demo
+Try it: [numerals.amerharb.com](https://numerals.amerharb.com)
