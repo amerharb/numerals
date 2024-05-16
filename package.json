@@ -20,6 +20,7 @@
 		"lint:fix": "yarn workspaces foreach --all -p run lint:fix",
 		"build": "yarn workspaces foreach --all run build",
 		"test": "yarn workspaces foreach --all -p run test",
+		"make-coverage-badge": "yarn workspaces foreach --all -p run make-coverage-badge",
 		"start": "yarn workspaces foreach --all -p run start"
 	},
 	"devDependencies": {
