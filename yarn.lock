@@ -1326,6 +1326,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@numerals/hanifi-rohingya@workspace:packages/hanifi-rohingya":
+  version: 0.0.0-use.local
+  resolution: "@numerals/hanifi-rohingya@workspace:packages/hanifi-rohingya"
+  languageName: unknown
+  linkType: soft
+
 "@numerals/hieroglyphic@npm:0.0.2":
   version: 0.0.2
   resolution: "@numerals/hieroglyphic@npm:0.0.2"
