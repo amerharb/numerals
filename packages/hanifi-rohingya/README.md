@@ -29,3 +29,11 @@ console.log(convert(123.45)); // 𐴱𐴲𐴳.𐴴𐴵
 
 ## Demo
 Try it: [numerals.amerharb.com](https://numerals.amerharb.com)
+
+## Other Numerals packages
+- [@numerals/eastern-arabic](https://www.npmjs.com/package/@numerals/eastern-arabic)
+- [@numerals/mayan](https://www.npmjs.com/package/@numerals/mayan)
+- [@numerals/hieroglyphic](https://www.npmjs.com/package/@numerals/hieroglyphic)
+- [@numerals/roman](https://www.npmjs.com/package/@numerals/roman)
+- [@numerals/aegean](https://www.npmjs.com/package/@numerals/aegean)
+- [@numerals/thai](https://www.npmjs.com/package/@numerals/thai)
