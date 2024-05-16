@@ -2,6 +2,10 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.7.0] 2024-5-16
+### Added
+- Add Hanifi Rohingya numeral conversion
+
 ## [0.6.0] 2024-5-09
 ### Added
 - Add Thai numeral conversion
