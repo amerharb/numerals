@@ -28,3 +28,6 @@ console.log(convert(2)); // 𓏻
 console.log(convert(10)); // 𓎆
 console.log(convert(1000)); // 𓂭
 ```
+
+## Demo
+Try it: [numerals.amerharb.com](https://numerals.amerharb.com)

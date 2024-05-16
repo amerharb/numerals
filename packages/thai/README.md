@@ -26,3 +26,6 @@ import { convert } from '@numerals/thai';
 console.log(convert(123)); // ๑๒๓
 console.log(convert(123.45)); // ๑๒๓.๔๕
 ```
+
+## Demo
+Try it: [numerals.amerharb.com](https://numerals.amerharb.com)

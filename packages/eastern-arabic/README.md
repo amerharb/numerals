@@ -26,3 +26,6 @@ import { convert } from '@numerals/eastern-arabic';
 console.log(convert(123)); // ١٢٣
 console.log(convert(123.45)); // ١٢٣٫٤٥
 ```
+
+## Demo
+Try it: [numerals.amerharb.com](https://numerals.amerharb.com)

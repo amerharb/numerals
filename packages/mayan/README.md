@@ -29,3 +29,6 @@ console.log(convert(10)); // 𝋪
 console.log(convert(19)); // 𝋳
 console.log(convert(20)); // 𝋰𝋠
 ```
+
+## Demo
+Try it: [numerals.amerharb.com](https://numerals.amerharb.com)

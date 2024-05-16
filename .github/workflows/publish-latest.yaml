@@ -1,4 +1,5 @@
 name: Publish Latest
+
 on:
   release:
     types: [ released ]
@@ -27,6 +28,8 @@ jobs:
               PACKAGE_NAME="aegean"
           elif [[ $TAG_NAME =~ ^thai\/v.* ]]; then
               PACKAGE_NAME="thai"
+          elif [[ $TAG_NAME =~ ^hanifi-rohingya\/v.* ]]; then
+              PACKAGE_NAME="hanifi-rohingya"
           else
               echo "❌ tag name: $TAG_NAME doesn't point to any publishable package"
               exit 1
