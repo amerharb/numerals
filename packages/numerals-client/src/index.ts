@@ -4,6 +4,7 @@ import { convert as hi } from '@numerals/hieroglyphic'
 import { convert as ro } from '@numerals/roman'
 import { convert as ag } from '@numerals/aegean'
 import { convert as th } from '@numerals/thai'
+import { convert as hr } from '@numerals/hanifi-rohingya'
 
 log('@numerals/eastern-arabic')
 log(calmConvert(ar, 123))
@@ -40,6 +41,12 @@ log(calmConvert(th, 123))
 log(calmConvert(th, 123.456))
 log(calmConvert(th, -1))
 log(calmConvert(th, NaN))
+
+log('@numerals/hanifi-rohingya')
+log(calmConvert(hr, 123))
+log(calmConvert(hr, 123.456))
+log(calmConvert(hr, -1))
+log(calmConvert(hr, NaN))
 
 log('Done')
 
