@@ -9,6 +9,7 @@
 		"packages/aegean",
 		"packages/thai",
 		"packages/hanifi-rohingya",
+		"packages/kaktovik",
 		"packages/numerals-client",
 		"packages/numerals-web"
 	],

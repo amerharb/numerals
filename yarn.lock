@@ -1352,6 +1352,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@numerals/kaktovik@workspace:packages/kaktovik":
+  version: 0.0.0-use.local
+  resolution: "@numerals/kaktovik@workspace:packages/kaktovik"
+  languageName: unknown
+  linkType: soft
+
 "@numerals/mayan@npm:0.0.1":
   version: 0.0.1
   resolution: "@numerals/mayan@npm:0.0.1"
