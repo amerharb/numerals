@@ -22,18 +22,14 @@ const map = new Map<string, string>(
 		['h', Ka['17']],
 		['i', Ka['18']],
 		['j', Ka['19']],
+		['.', '.'],
+		['-', '-'],
 	]
 )
 
 export function convert(source: number): string {
 	if (!Number.isFinite(source)) {
 		throw new Error('Source is not a finite number')
-	}
-	if (source < 0) {
-		throw new Error('Source is negative, only positive numbers are supported')
-	}
-	if (source % 1 !== 0) {
-		throw new Error('Source is not an integer, only integers are supported')
 	}
 
 	const base20 = source.toString(20)

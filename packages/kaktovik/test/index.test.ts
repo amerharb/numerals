@@ -35,6 +35,14 @@ describe('convert()', () => {
 		const actual = convert(40)
 		expect(actual).toEqual(`${Ka['2']}${Ka['0']}`)
 	})
+	it(`convert 1.1 into  ${Ka['1']}.${Ka['2']}`, () => {
+		const actual = convert(1.1)
+		expect(actual).toEqual(`${Ka['1']}.${Ka['2']}`)
+	})
+	it(`convert -1 into  -${Ka['1']}`, () => {
+		const actual = convert(-1)
+		expect(actual).toEqual(`-${Ka['1']}`)
+	})
 	it.each([NaN, Infinity, -Infinity])
 	('throw Error for non number [%s]', (it) => {
 		const actual = () => convert(it)
