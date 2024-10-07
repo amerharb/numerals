@@ -2,30 +2,37 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
-## [0.7.0] 2024-5-16
+## [0.8.0] 2024-01-16
+### Added
+- Add Kaktovik numeral conversion
+
+### Fixed
+- Change enum case
+
+## [0.7.0] 2024-05-16
 ### Added
 - Add Hanifi Rohingya numeral conversion
 
-## [0.6.0] 2024-5-09
+## [0.6.0] 2024-05-09
 ### Added
 - Add Thai numeral conversion
 ### Changed
 - Order of page, input first then select numerals
 
-## [0.5.0] 2024-5-02
+## [0.5.0] 2024-05-02
 ### Added
 - Add Aegean numeral conversion
 
-## [0.4.1] 2024-5-01
+## [0.4.1] 2024-05-01
 ### Changed
 - Use roman v0.0.2
 - support multi values, enter more than one number
 
-## [0.0.4] 2024-5-01
+## [0.0.4] 2024-05-01
 ### Added
 - Add Roman numeral conversion
 
-## [0.0.3] 2024-4-30
+## [0.0.3] 2024-04-30
 ### Added
 - Add Hieroglyphic numeral conversion
 

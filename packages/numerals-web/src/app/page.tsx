@@ -9,6 +9,7 @@ import { convert as convertRo } from '@numerals/roman'
 import { convert as convertAg } from '@numerals/aegean'
 import { convert as convertTh } from '@numerals/thai'
 import { convert as convertHr } from '@numerals/hanifi-rohingya'
+import { convert as convertKa } from '@numerals/kaktovik'
 import Image from 'next/image'
 
 enum Numerals {
@@ -19,6 +20,7 @@ enum Numerals {
 	Aegean = 'aegean',
 	Thai = 'thai',
 	HanifiRohingya = 'hanifi-rohingya',
+	Kaktovik = 'kaktovik',
 }
 
 export default function Home() {
@@ -34,6 +36,7 @@ export default function Home() {
 		{ value: Numerals.Aegean, label: 'Aegean 𐄇 𐄈 𐄐 𐄙' },
 		{ value: Numerals.Thai, label: 'Thai ๑ ๒ ๓ ๔' },
 		{ value: Numerals.HanifiRohingya, label: 'Hanifi Rohingya 𐴐 𐴑 𐴒 𐴓' },
+		{ value: Numerals.Kaktovik, label: 'Kaktovic ??' },
 	]
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
 		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
@@ -139,6 +142,10 @@ export default function Home() {
 						{' '}@numerals/hanifi-rohingya
 					</a>
 					<br/>
+					<a href="https://www.npmjs.com/package/@numerals/kaktovik" style={{ textDecoration: 'none' }}>
+						{' '}@numerals/kaktovik
+					</a>
+					<br/>
 				</div>
 				You can find the source code on{' '}
 				<a href="https://www.github.com/amerharb/numerals" style={{ textDecoration: 'none' }}>
@@ -173,5 +180,7 @@ function convert(source: number, to: Numerals): string {
 		return convertTh(source)
 	case Numerals.HanifiRohingya:
 		return convertHr(source)
+	case Numerals.Kaktovik:
+		return convertKa(source)
 	}
 }
