@@ -7,7 +7,7 @@
 
 **@numerals/kaktovik** is a package for converting number into Kaktovik numeral.
 
-`19 -> 𝋳`
+`19 -> 𝋓`
 
 ## How to use
 npm:
@@ -23,11 +23,11 @@ yarn add @numerals/kaktovik
 Type Script:
 ```js
 import { convert } from '@numerals/kaktovik';
-console.log(convert(0)); // ??
-console.log(convert(1)); // ??
-console.log(convert(10)); // ??
-console.log(convert(19)); // ??
-console.log(convert(20)); // ??
+console.log(convert(0)); // 𝋀
+console.log(convert(1)); // 𝋁
+console.log(convert(10)); // 𝋊
+console.log(convert(19)); // 𝋓
+console.log(convert(20)); // 𝋁𝋀
 ```
 
 ## Demo
