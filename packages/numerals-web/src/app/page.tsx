@@ -18,7 +18,7 @@ enum Numerals {
 	Roman = 'roman',
 	Aegean = 'aegean',
 	Thai = 'thai',
-	hanifiRohingya = 'hanifi-rohingya',
+	HanifiRohingya = 'hanifi-rohingya',
 }
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
 		{ value: Numerals.Roman, label: 'Roman Ⅰ Ⅱ Ⅲ Ⅳ' },
 		{ value: Numerals.Aegean, label: 'Aegean 𐄇 𐄈 𐄐 𐄙' },
 		{ value: Numerals.Thai, label: 'Thai ๑ ๒ ๓ ๔' },
-		{ value: Numerals.hanifiRohingya, label: 'Hanifi Rohingya 𐴐 𐴑 𐴒 𐴓' },
+		{ value: Numerals.HanifiRohingya, label: 'Hanifi Rohingya 𐴐 𐴑 𐴒 𐴓' },
 	]
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
 		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
@@ -171,7 +171,7 @@ function convert(source: number, to: Numerals): string {
 		return convertAg(source)
 	case Numerals.Thai:
 		return convertTh(source)
-	case Numerals.hanifiRohingya:
+	case Numerals.HanifiRohingya:
 		return convertHr(source)
 	}
 }
