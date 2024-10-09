@@ -21,8 +21,11 @@ This is a monorepo for the Numerals project.
 ### thai ๐๑๒๓๔๕๖๗๘๙
 [README](https://github.com/amerharb/numerals/blob/main/packages/thai/README.md)
 
-### hanifi-rohingya 
+### hanifi-rohingya 𐴱 𐴲 𐴳 𐴴 𐴵
 [README](https://github.com/amerharb/numerals/blob/main/packages/hanifi-rohingya/README.md)
+
+### kaktovik 𝋀 𝋁 𝋂 𝋃
+[README](https://github.com/amerharb/numerals/blob/main/packages/kaktovik/README.md)
 
 ### numerals-client
 Example of a client for npm package

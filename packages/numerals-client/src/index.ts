@@ -5,6 +5,7 @@ import { convert as ro } from '@numerals/roman'
 import { convert as ag } from '@numerals/aegean'
 import { convert as th } from '@numerals/thai'
 import { convert as hr } from '@numerals/hanifi-rohingya'
+import { convert as ka } from '@numerals/kaktovik'
 
 log('@numerals/eastern-arabic')
 log(calmConvert(ar, 123))
@@ -48,6 +49,11 @@ log(calmConvert(hr, 123.456))
 log(calmConvert(hr, -1))
 log(calmConvert(hr, NaN))
 
+log('@numerals/kaktovik')
+log(calmConvert(ka, 123))
+log(calmConvert(ka, 123.456))
+log(calmConvert(ka, -1))
+log(calmConvert(ka, NaN))
 log('Done')
 
 function calmConvert(convert:(n:number) => string, source: number): string {

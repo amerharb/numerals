@@ -9,10 +9,11 @@
 		"packages/aegean",
 		"packages/thai",
 		"packages/hanifi-rohingya",
+		"packages/kaktovik",
 		"packages/numerals-client",
 		"packages/numerals-web"
 	],
-	"version": "0.7.0",
+	"version": "0.8.0",
 	"author": "Amer Harb",
 	"license": "ISC",
 	"scripts": {

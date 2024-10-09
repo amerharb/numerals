@@ -1,7 +1,7 @@
 {
 	"name": "numerals-client",
 	"private": true,
-	"version": "0.7.0",
+	"version": "0.8.0",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "rm -rf dist && npx tsc",
@@ -16,6 +16,7 @@
 		"@numerals/eastern-arabic": "0.0.2",
 		"@numerals/hanifi-rohingya": "0.0.1",
 		"@numerals/hieroglyphic": "0.0.2",
+		"@numerals/kaktovik": "0.0.1-next.0",
 		"@numerals/mayan": "0.0.1",
 		"@numerals/roman": "0.0.2",
 		"@numerals/thai": "0.0.2"
