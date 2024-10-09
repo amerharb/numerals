@@ -1,6 +1,10 @@
 # Changelog
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.8.0]  2024-10-09
+### Added
+- Add Kaktovik numeral package
+
 ## [0.7.0]  2024-05-16
 ### Added
 - Add Hanifi Rohingya numeral package
