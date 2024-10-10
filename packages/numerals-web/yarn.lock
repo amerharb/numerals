@@ -649,10 +649,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@numerals/kaktovik@npm:0.0.1-next.0":
-  version: 0.0.1-next.0
-  resolution: "@numerals/kaktovik@npm:0.0.1-next.0"
-  checksum: 10c0/2a4589e5e10aebf2faa7048f8f382e194297bec3afdd055caffc9b10053244399f4a7dae4c57782d5e52abebd76ea91c5808c2196106a188248adfd8867da3e4
+"@numerals/kaktovik@npm:0.0.1":
+  version: 0.0.1
+  resolution: "@numerals/kaktovik@npm:0.0.1"
+  checksum: 10c0/b2c70aec98543cdefa12e75c3d5a6e773882f1419ce1784b18834b44461a081b5bb829aabcf328d0ef664a9468fb196da6cf9e3ad6cafd65c462e3f5741c9393
   languageName: node
   linkType: hard
 
@@ -2860,7 +2860,7 @@ __metadata:
     "@numerals/eastern-arabic": "npm:0.0.2"
     "@numerals/hanifi-rohingya": "npm:0.0.1"
     "@numerals/hieroglyphic": "npm:0.0.2"
-    "@numerals/kaktovik": "npm:0.0.1-next.0"
+    "@numerals/kaktovik": "npm:0.0.1"
     "@numerals/mayan": "npm:0.0.1"
     "@numerals/roman": "npm:0.0.2"
     "@numerals/thai": "npm:0.0.2"
