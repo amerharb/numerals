@@ -38,9 +38,10 @@ export default function Home() {
 		{ value: Numerals.HanifiRohingya, label: 'Hanifi Rohingya 𐴐 𐴑 𐴒 𐴓' },
 		{ value: Numerals.Kaktovik, label: 'Kaktovic 𝋀 𝋁 𝋂 𝋃' },
 	]
+
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
 		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
-            To:
+			To:
 		</label>
 		<Select
 			id="toDropdown"
@@ -66,7 +67,7 @@ export default function Home() {
 		<main style={{ textAlign: 'center', padding: '20px' }}>
 			<h1>Numerals Converter</h1>
 			<label htmlFor="numberInput" style={{ marginRight: '10px' }}>
-				Enter Number:
+					Enter Number:
 			</label>
 			<textarea
 				id="editTextBox"
@@ -96,7 +97,7 @@ export default function Home() {
 			{ToSelect()}
 			<div>
 				<label htmlFor="resultLabel" style={{ marginRight: '10px' }}>
-                    Result:
+						Result:
 				</label>
 				<br/>
 				<span
@@ -109,7 +110,7 @@ export default function Home() {
 			</div>
 			<hr/>
 			<div style={{ marginTop: '20px', fontSize: '22px' }}>
-				This is an open source project. based on <Image src="/images/Npm-logo.svg" alt="NPM" width={54}
+					This is an open source project. based on <Image src="/images/Npm-logo.svg" alt="NPM" width={54}
 					height={21}
 					style={{ width: '54px', height: '21px' }}/> packages:{' '}
 				<br/>
@@ -147,15 +148,15 @@ export default function Home() {
 					</a>
 					<br/>
 				</div>
-				You can find the source code on{' '}
+					You can find the source code on{' '}
 				<a href="https://www.github.com/amerharb/numerals" style={{ textDecoration: 'none' }}>
 					<Image src="/images/Github-logo.svg" alt="GitHub" width={32}
-								 height={32}
-								 style={{ width: '32px', height: '32px' }}/>
+									 height={32}
+									 style={{ width: '32px', height: '32px' }}/>
 					{' '}GitHub
 				</a>
 				<br/>
-				You welcome to contribute to the project.
+					You welcome to contribute to the project.
 			</div>
 			<div style={{ marginTop: '25px', fontSize: '22px' }}>
 				<a href="mailto:numerals@amerharb.com" style={{ textDecoration: 'none' }}>✉️ Email</a>
