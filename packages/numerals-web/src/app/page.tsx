@@ -40,7 +40,7 @@ export default function Home() {
 		{ value: Numerals.Aegean, label: 'Aegean 𐄇 𐄈 𐄐 𐄙' },
 		{ value: Numerals.Thai, label: 'Thai ๑ ๒ ๓ ๔' },
 		{ value: Numerals.HanifiRohingya, label: 'Hanifi Rohingya 𐴐 𐴑 𐴒 𐴓' },
-		{ value: Numerals.Kaktovik, label: 'Kaktovic 𝋀 𝋁 𝋂 𝋃' },
+		{ value: Numerals.Kaktovik, label: 'Kaktovik 𝋀 𝋁 𝋂 𝋃' },
 	]
 
 	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
