@@ -23,10 +23,14 @@ enum Numerals {
 	Kaktovik = 'kaktovik',
 }
 
+const DEFAULT_TO = Numerals.EasternArabic
+
 export default function Home() {
 	const [textBoxValue, setTextBoxValue] = useState('')
 	const [resultText, setResultText] = useState('')
-	const [toValue, setToValue] = useState<Numerals | undefined>(Numerals.EasternArabic)
+	const to = new URLSearchParams(window.location.search).get('to')
+	const defaultTo = getNumerals(to, DEFAULT_TO)
+	const [toValue, setToValue] = useState<Numerals>(defaultTo)
 
 	const options = [
 		{ value: Numerals.EasternArabic, label: 'Eastern Arabic ٤ ٣ ٢ ١' },
@@ -47,12 +51,13 @@ export default function Home() {
 			id="toDropdown"
 			isSearchable={false}
 			options={options}
-			defaultValue={options[0]}
+			defaultValue={options.find(option => option.value === toValue)}
 			onChange={(selectedOption) => {
-				setToValue(selectedOption?.value)
-				if (!selectedOption?.value) {
+				if (!selectedOption) {
+					setToValue(DEFAULT_TO)
 					return
 				}
+				setToValue(selectedOption.value)
 				try {
 					const result = convert(parseFloat(textBoxValue), selectedOption.value)
 					setResultText(result)
@@ -76,9 +81,6 @@ export default function Home() {
 				value={textBoxValue}
 				onChange={(e) => {
 					setTextBoxValue(e.target.value)
-					if (!toValue) {
-						return
-					}
 					const lines = e.target.value.split(/\n+|\s+/).map((line) => line.trim())
 					let result = ''
 					lines.forEach((line) => {
@@ -184,4 +186,12 @@ function convert(source: number, to: Numerals): string {
 	case Numerals.Kaktovik:
 		return convertKa(source)
 	}
+}
+
+function getNumerals(value: string|null, def: Numerals): Numerals {
+	if (!value) {
+		return def
+	}
+	const v = value.toLowerCase()
+	return Object.values(Numerals).includes(v as Numerals) ? v as Numerals : def
 }
