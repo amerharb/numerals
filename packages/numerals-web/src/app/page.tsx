@@ -11,17 +11,7 @@ import { convert as convertTh } from '@numerals/thai'
 import { convert as convertHr } from '@numerals/hanifi-rohingya'
 import { convert as convertKa } from '@numerals/kaktovik'
 import Image from 'next/image'
-
-enum Numerals {
-	EasternArabic = 'easternArabic',
-	Mayan = 'mayan',
-	Hieroglyphic = 'hieroglyphic',
-	Roman = 'roman',
-	Aegean = 'aegean',
-	Thai = 'thai',
-	HanifiRohingya = 'hanifi-rohingya',
-	Kaktovik = 'kaktovik',
-}
+import { Numerals, getNumerals } from './types'
 
 const DEFAULT_TO = Numerals.EasternArabic
 
@@ -186,12 +176,4 @@ function convert(source: number, to: Numerals): string {
 	case Numerals.Kaktovik:
 		return convertKa(source)
 	}
-}
-
-function getNumerals(value: string|null, def: Numerals): Numerals {
-	if (!value) {
-		return def
-	}
-	const v = value.toLowerCase()
-	return Object.values(Numerals).includes(v as Numerals) ? v as Numerals : def
 }
