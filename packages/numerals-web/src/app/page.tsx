@@ -12,13 +12,15 @@ import { convert as convertHr } from '@numerals/hanifi-rohingya'
 import { convert as convertKa } from '@numerals/kaktovik'
 import Image from 'next/image'
 import { Numerals, getNumerals } from './types'
+import { useSearchParams } from 'next/navigation'
 
 const DEFAULT_TO = Numerals.EasternArabic
 
 export default function Home() {
 	const [textBoxValue, setTextBoxValue] = useState('')
 	const [resultText, setResultText] = useState('')
-	const to = new URLSearchParams(window.location.search).get('to')
+	const query = useSearchParams()
+	const to = query?.get('to')
 	const defaultTo = getNumerals(to, DEFAULT_TO)
 	const [toValue, setToValue] = useState<Numerals>(defaultTo)
 

@@ -9,7 +9,7 @@ export enum Numerals {
 	Kaktovik = 'kaktovik',
 }
 
-export function getNumerals(value: string|null, def: Numerals): Numerals {
+export function getNumerals(value: string|null|undefined, def: Numerals): Numerals {
 	if (!value) {
 		return def
 	}
