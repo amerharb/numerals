@@ -78,6 +78,8 @@ export default function Home() {
 				dir="auto"
 				placeholder="Type number here"
 				type="number"
+				pattern="-?[0-9]*(\.[0-9]+)?"
+				inputMode="decimal"
 				value={textBoxValue}
 				onChange={(e) => {
 					setTextBoxValue(e.target.value)
