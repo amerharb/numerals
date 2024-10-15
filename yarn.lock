@@ -1359,13 +1359,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@numerals/kaktovik@npm:0.0.1-next.0":
-  version: 0.0.1-next.0
-  resolution: "@numerals/kaktovik@npm:0.0.1-next.0"
-  checksum: 10c0/2a4589e5e10aebf2faa7048f8f382e194297bec3afdd055caffc9b10053244399f4a7dae4c57782d5e52abebd76ea91c5808c2196106a188248adfd8867da3e4
-  languageName: node
-  linkType: hard
-
 "@numerals/kaktovik@workspace:packages/kaktovik":
   version: 0.0.0-use.local
   resolution: "@numerals/kaktovik@workspace:packages/kaktovik"
@@ -5399,7 +5392,7 @@ __metadata:
     "@numerals/eastern-arabic": "npm:0.0.2"
     "@numerals/hanifi-rohingya": "npm:0.0.1"
     "@numerals/hieroglyphic": "npm:0.0.2"
-    "@numerals/kaktovik": "npm:0.0.1-next.0"
+    "@numerals/kaktovik": "npm:0.0.1"
     "@numerals/mayan": "npm:0.0.1"
     "@numerals/roman": "npm:0.0.2"
     "@numerals/thai": "npm:0.0.2"
