@@ -4,6 +4,7 @@
 ## [0.8.0]  2024-10-09
 ### Added
 - Add Kaktovik numeral package
+- inputMode="decimal" for input, iPhone keyboard will show numeric pad
 
 ## [0.7.0]  2024-05-16
 ### Added

@@ -11,22 +11,23 @@ import { convert as convertTh } from '@numerals/thai'
 import { convert as convertHr } from '@numerals/hanifi-rohingya'
 import { convert as convertKa } from '@numerals/kaktovik'
 import Image from 'next/image'
+import { Numerals, getNumerals } from './types'
+import { useSearchParams } from 'next/navigation'
 
-enum Numerals {
-	EasternArabic = 'easternArabic',
-	Mayan = 'mayan',
-	Hieroglyphic = 'hieroglyphic',
-	Roman = 'roman',
-	Aegean = 'aegean',
-	Thai = 'thai',
-	HanifiRohingya = 'hanifi-rohingya',
-	Kaktovik = 'kaktovik',
-}
+const DEFAULT_TO = Numerals.EasternArabic
+const DEFAULT_INPUT = ''
 
 export default function Home() {
-	const [textBoxValue, setTextBoxValue] = useState('')
-	const [resultText, setResultText] = useState('')
-	const [toValue, setToValue] = useState<Numerals | undefined>(Numerals.EasternArabic)
+	const query = useSearchParams()
+	const to = query?.get('to')
+	const input = query?.get('input')
+	const landingTo = getNumerals(to, DEFAULT_TO)
+	const landingInput = input ?? DEFAULT_INPUT
+	const [toValue, setToValue] = useState<Numerals>(landingTo)
+	const [textBoxValue, setTextBoxValue] = useState(landingInput)
+	const landingResult = landingInput ? convert(parseFloat(landingInput), landingTo) : ''
+	const [resultText, setResultText] = useState(landingResult)
+
 
 	const options = [
 		{ value: Numerals.EasternArabic, label: 'Eastern Arabic ٤ ٣ ٢ ١' },
@@ -36,48 +37,52 @@ export default function Home() {
 		{ value: Numerals.Aegean, label: 'Aegean 𐄇 𐄈 𐄐 𐄙' },
 		{ value: Numerals.Thai, label: 'Thai ๑ ๒ ๓ ๔' },
 		{ value: Numerals.HanifiRohingya, label: 'Hanifi Rohingya 𐴐 𐴑 𐴒 𐴓' },
-		{ value: Numerals.Kaktovik, label: 'Kaktovic 𝋀 𝋁 𝋂 𝋃' },
+		{ value: Numerals.Kaktovik, label: 'Kaktovik 𝋀 𝋁 𝋂 𝋃' },
 	]
-	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
-		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
-            To:
-		</label>
-		<Select
-			id="toDropdown"
-			isSearchable={false}
-			options={options}
-			defaultValue={options[0]}
-			onChange={(selectedOption) => {
-				setToValue(selectedOption?.value)
-				if (!selectedOption?.value) {
-					return
-				}
-				try {
-					const result = convert(parseFloat(textBoxValue), selectedOption.value)
-					setResultText(result)
-				} catch (e: any) {
-					setResultText(e.message)
-				}
-			}}
-		/>
-	</div>
+
+	function toSelectComponent  () {
+		return <div style={{ marginBottom: '10px' }}>
+			<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
+				To:
+			</label>
+			<Select
+				id="toDropdown"
+				isSearchable={false}
+				options={options}
+				defaultValue={options.find(option => option.value === toValue)}
+				onChange={(selectedOption) => {
+					if (!selectedOption) {
+						setToValue(DEFAULT_TO)
+						return
+					}
+					setToValue(selectedOption.value)
+					try {
+						const result = convert(parseFloat(textBoxValue), selectedOption.value)
+						setResultText(result)
+					} catch (e: any) {
+						setResultText(e.message)
+					}
+				}}
+			/>
+		</div>
+	}
 
 	return (
 		<main style={{ textAlign: 'center', padding: '20px' }}>
 			<h1>Numerals Converter</h1>
 			<label htmlFor="numberInput" style={{ marginRight: '10px' }}>
-				Enter Number:
+					Enter Number:
 			</label>
-			<textarea
+			<input
 				id="editTextBox"
 				dir="auto"
 				placeholder="Type number here"
+				type="number"
+				pattern="-?[0-9]*(\.[0-9]+)?"
+				inputMode="decimal"
 				value={textBoxValue}
 				onChange={(e) => {
 					setTextBoxValue(e.target.value)
-					if (!toValue) {
-						return
-					}
 					const lines = e.target.value.split(/\n+|\s+/).map((line) => line.trim())
 					let result = ''
 					lines.forEach((line) => {
@@ -93,10 +98,10 @@ export default function Home() {
 				}}
 				style={{ padding: '10px', width: '100%', minHeight: '100px', fontSize: '25px' }}
 			/>
-			{ToSelect()}
+			{toSelectComponent()}
 			<div>
 				<label htmlFor="resultLabel" style={{ marginRight: '10px' }}>
-                    Result:
+						Result:
 				</label>
 				<br/>
 				<span
@@ -109,7 +114,7 @@ export default function Home() {
 			</div>
 			<hr/>
 			<div style={{ marginTop: '20px', fontSize: '22px' }}>
-				This is an open source project. based on <Image src="/images/Npm-logo.svg" alt="NPM" width={54}
+					This is an open source project. based on <Image src="/images/Npm-logo.svg" alt="NPM" width={54}
 					height={21}
 					style={{ width: '54px', height: '21px' }}/> packages:{' '}
 				<br/>
@@ -147,15 +152,15 @@ export default function Home() {
 					</a>
 					<br/>
 				</div>
-				You can find the source code on{' '}
+					You can find the source code on{' '}
 				<a href="https://www.github.com/amerharb/numerals" style={{ textDecoration: 'none' }}>
 					<Image src="/images/Github-logo.svg" alt="GitHub" width={32}
-								 height={32}
-								 style={{ width: '32px', height: '32px' }}/>
+									 height={32}
+									 style={{ width: '32px', height: '32px' }}/>
 					{' '}GitHub
 				</a>
 				<br/>
-				You welcome to contribute to the project.
+					You welcome to contribute to the project.
 			</div>
 			<div style={{ marginTop: '25px', fontSize: '22px' }}>
 				<a href="mailto:numerals@amerharb.com" style={{ textDecoration: 'none' }}>✉️ Email</a>
