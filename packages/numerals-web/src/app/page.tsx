@@ -15,14 +15,19 @@ import { Numerals, getNumerals } from './types'
 import { useSearchParams } from 'next/navigation'
 
 const DEFAULT_TO = Numerals.EasternArabic
+const DEFAULT_INPUT = ''
 
 export default function Home() {
-	const [textBoxValue, setTextBoxValue] = useState('')
-	const [resultText, setResultText] = useState('')
 	const query = useSearchParams()
 	const to = query?.get('to')
-	const defaultTo = getNumerals(to, DEFAULT_TO)
-	const [toValue, setToValue] = useState<Numerals>(defaultTo)
+	const input = query?.get('input')
+	const landingTo = getNumerals(to, DEFAULT_TO)
+	const landingInput = input ?? DEFAULT_INPUT
+	const [toValue, setToValue] = useState<Numerals>(landingTo)
+	const [textBoxValue, setTextBoxValue] = useState(landingInput)
+	const landingResult = landingInput ? convert(parseFloat(landingInput), landingTo) : ''
+	const [resultText, setResultText] = useState(landingResult)
+
 
 	const options = [
 		{ value: Numerals.EasternArabic, label: 'Eastern Arabic ٤ ٣ ٢ ١' },
@@ -35,30 +40,32 @@ export default function Home() {
 		{ value: Numerals.Kaktovik, label: 'Kaktovik 𝋀 𝋁 𝋂 𝋃' },
 	]
 
-	const ToSelect = () => <div style={{ marginBottom: '10px' }}>
-		<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
-			To:
-		</label>
-		<Select
-			id="toDropdown"
-			isSearchable={false}
-			options={options}
-			defaultValue={options.find(option => option.value === toValue)}
-			onChange={(selectedOption) => {
-				if (!selectedOption) {
-					setToValue(DEFAULT_TO)
-					return
-				}
-				setToValue(selectedOption.value)
-				try {
-					const result = convert(parseFloat(textBoxValue), selectedOption.value)
-					setResultText(result)
-				} catch (e: any) {
-					setResultText(e.message)
-				}
-			}}
-		/>
-	</div>
+	function toSelectComponent  () {
+		return <div style={{ marginBottom: '10px' }}>
+			<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
+				To:
+			</label>
+			<Select
+				id="toDropdown"
+				isSearchable={false}
+				options={options}
+				defaultValue={options.find(option => option.value === toValue)}
+				onChange={(selectedOption) => {
+					if (!selectedOption) {
+						setToValue(DEFAULT_TO)
+						return
+					}
+					setToValue(selectedOption.value)
+					try {
+						const result = convert(parseFloat(textBoxValue), selectedOption.value)
+						setResultText(result)
+					} catch (e: any) {
+						setResultText(e.message)
+					}
+				}}
+			/>
+		</div>
+	}
 
 	return (
 		<main style={{ textAlign: 'center', padding: '20px' }}>
@@ -66,10 +73,11 @@ export default function Home() {
 			<label htmlFor="numberInput" style={{ marginRight: '10px' }}>
 					Enter Number:
 			</label>
-			<textarea
+			<input
 				id="editTextBox"
 				dir="auto"
 				placeholder="Type number here"
+				type="number"
 				value={textBoxValue}
 				onChange={(e) => {
 					setTextBoxValue(e.target.value)
@@ -88,7 +96,7 @@ export default function Home() {
 				}}
 				style={{ padding: '10px', width: '100%', minHeight: '100px', fontSize: '25px' }}
 			/>
-			{ToSelect()}
+			{toSelectComponent()}
 			<div>
 				<label htmlFor="resultLabel" style={{ marginRight: '10px' }}>
 						Result:
