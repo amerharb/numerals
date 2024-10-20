@@ -2,7 +2,7 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
-## [0.8.0] 2024-01-16
+## [0.8.0] 2024-10-16
 ### Added
 - Add Kaktovik numeral conversion
 
