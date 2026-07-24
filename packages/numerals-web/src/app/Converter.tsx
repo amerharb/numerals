@@ -11,10 +11,25 @@ import { convert as convertTh } from '@numerals/thai'
 import { convert as convertHr } from '@numerals/hanifi-rohingya'
 import { convert as convertKa } from '@numerals/kaktovik'
 import Image from 'next/image'
+import ThemeToggle from '@/components/ThemeToggle'
 import { Numerals, getNumerals } from './types'
 
 const DEFAULT_TO = Numerals.EasternArabic
 const DEFAULT_INPUT = ''
+
+// Theme react-select via CSS variables so its control/menu follow the color scheme.
+const selectStyles = {
+	control: (base: any) => ({ ...base, backgroundColor: 'var(--surface)', borderColor: 'var(--border)' }),
+	menu: (base: any) => ({ ...base, backgroundColor: 'var(--surface)' }),
+	option: (base: any, state: any) => ({
+		...base,
+		backgroundColor: state.isFocused ? 'var(--surface-hover)' : 'var(--surface)',
+		color: 'var(--fg)',
+	}),
+	singleValue: (base: any) => ({ ...base, color: 'var(--fg)' }),
+	input: (base: any) => ({ ...base, color: 'var(--fg)' }),
+	placeholder: (base: any) => ({ ...base, color: 'var(--muted)' }),
+}
 
 // Reads ?to= & ?input= query params (resolved by the server component in page.tsx) to
 // preselect the dropdown and prefill the input, e.g. ?to=roman&input=42
@@ -47,6 +62,7 @@ export default function Converter({ to, input }: { to?: string; input?: string }
 				id="toDropdown"
 				instanceId="toDropdown"
 				isSearchable={false}
+				styles={selectStyles}
 				options={options}
 				defaultValue={options.find(option => option.value === toValue)}
 				onChange={(selectedOption) => {
@@ -68,6 +84,7 @@ export default function Converter({ to, input }: { to?: string; input?: string }
 
 	return (
 		<main style={{ textAlign: 'center', padding: '20px' }}>
+			<ThemeToggle/>
 			<h1>Numerals Converter</h1>
 			<label htmlFor="numberInput" style={{ marginRight: '10px' }}>
 					Enter Number:
@@ -153,7 +170,7 @@ export default function Converter({ to, input }: { to?: string; input?: string }
 				</div>
 					You can find the source code on{' '}
 				<a href="https://www.github.com/amerharb/numerals" style={{ textDecoration: 'none' }}>
-					<Image src="/images/Github-logo.svg" alt="GitHub" width={32}
+					<Image className="github-logo" src="/images/Github-logo.svg" alt="GitHub" width={32}
 									 height={32}
 									 style={{ width: '32px', height: '32px' }}/>
 					{' '}GitHub

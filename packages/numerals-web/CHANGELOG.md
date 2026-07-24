@@ -4,6 +4,7 @@
 
 ## [0.9.0] 2026-07-24
 ### Added
+- Dark mode: follows the OS by default with a System/Light/Dark toggle (persisted to `localStorage`, no flash on load)
 - `vercel.json` declaring the Next.js framework for deployment
 
 ### Changed

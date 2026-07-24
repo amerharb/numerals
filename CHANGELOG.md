@@ -2,6 +2,9 @@
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
 ## [0.9.0]  2026-07-24
+### Added
+- Dark mode in numerals-web with a System/Light/Dark toggle
+
 ### Changed
 - Change package manager from yarn to npm
 - Migrate ESLint to v9 flat config (`eslint.config.mjs`)
