@@ -15,11 +15,6 @@ npm:
 npm i @numerals/roman
 ```
 
-yarn:
-```shell
-yarn add @numerals/roman
-```
-
 Type Script:
 ```ts
 import { convert } from '@numerals/roman';

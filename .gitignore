@@ -2,13 +2,6 @@
 dist/
 node_modules/
 
-# Yarn 4
-**/.yarn/*
-!**/.yarn/patches
-!**/.yarn/plugins
-!**/.yarn/releases
-!**/.yarn/versions
-
 ### macOS template
 # General
 .DS_Store
@@ -21,3 +14,7 @@ node_modules/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Claude Code — keep shared config (settings.json, launch.json, commands, agents),
+# ignore per-developer local settings.
+.claude/settings.local.json

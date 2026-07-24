@@ -38,18 +38,18 @@ describe('convert()', () => {
 	it.each([NaN, Infinity, -Infinity])
 	('throw Error for non number [%s]', (it) => {
 		const actual = () => convert(it)
-		expect(actual).toThrowError('Source is not a finite number')
+		expect(actual).toThrow('Source is not a finite number')
 	})
 	it('throw Error for zero', () => {
 		const actual = () => convert(0)
-		expect(actual).toThrowError('Source is zero, only positive numbers are supported')
+		expect(actual).toThrow('Source is zero, only positive numbers are supported')
 	})
 	it('throw Error for negative number', () => {
 		const actual = () => convert(-1)
-		expect(actual).toThrowError('Source is negative, only positive numbers are supported')
+		expect(actual).toThrow('Source is negative, only positive numbers are supported')
 	})
 	it('throw Error for float number', () => {
 		const actual = () => convert(1.1)
-		expect(actual).toThrowError('Source is not an integer, only integers are supported')
+		expect(actual).toThrow('Source is not an integer, only integers are supported')
 	})
 })

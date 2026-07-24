@@ -15,11 +15,6 @@ npm:
 npm i @numerals/hieroglyphic
 ```
 
-yarn:
-```shell
-yarn add @numerals/hieroglyphic
-```
-
 Type Script:
 ```ts
 import { convert } from '@numerals/hieroglyphic';
