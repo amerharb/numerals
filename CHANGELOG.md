@@ -9,6 +9,9 @@
 - Upgrade numerals-web to Next.js v16
 - Consolidate publish workflows into one; CI runs on npm with Node 20/22/24
 
+### Security
+- Override transitive `postcss` (>=8.5.22) and `sharp` (>=0.35.3) to clear high-severity advisories (`npm audit` clean)
+
 ## [0.8.0]  2024-10-09
 ### Added
 - Add Kaktovik numeral package
