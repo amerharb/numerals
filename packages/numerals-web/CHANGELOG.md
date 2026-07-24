@@ -3,6 +3,9 @@
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
 ## [0.9.0] 2026-07-24
+### Added
+- `vercel.json` declaring the Next.js framework for deployment
+
 ### Changed
 - Upgrade Next.js from v14 to v16
 - Read `to` & `input` query params in a server component and pass them to the client Converter component (drop `useSearchParams`)
