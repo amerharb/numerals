@@ -26,32 +26,22 @@ jobs:
           echo "🏷️ npm tag: $NPM_TAG"
           echo "NPM_TAG=$NPM_TAG" >> $GITHUB_ENV
 
+      - uses: actions/checkout@v4
+
       - name: fill package name
         run: |
-          if [[ $TAG_NAME =~ ^eastern-arabic\/v.* ]]; then
-              PACKAGE_NAME="eastern-arabic"
-          elif [[ $TAG_NAME =~ ^mayan\/v.* ]]; then
-              PACKAGE_NAME="mayan"
-          elif [[ $TAG_NAME =~ ^hieroglyphic\/v.* ]]; then
-              PACKAGE_NAME="hieroglyphic"
-          elif [[ $TAG_NAME =~ ^roman\/v.* ]]; then
-              PACKAGE_NAME="roman"
-          elif [[ $TAG_NAME =~ ^aegean\/v.* ]]; then
-              PACKAGE_NAME="aegean"
-          elif [[ $TAG_NAME =~ ^thai\/v.* ]]; then
-              PACKAGE_NAME="thai"
-          elif [[ $TAG_NAME =~ ^hanifi-rohingya\/v.* ]]; then
-              PACKAGE_NAME="hanifi-rohingya"
-          elif [[ $TAG_NAME =~ ^kaktovik\/v.* ]]; then
-              PACKAGE_NAME="kaktovik"
-          else
-              echo "❌ tag name: $TAG_NAME doesn't point to any publishable package"
+          # Derive the package folder from the tag prefix, e.g. "babylonian/v0.0.1" -> "babylonian".
+          PACKAGE_NAME="${TAG_NAME%%/v*}"
+          if [[ "$PACKAGE_NAME" == "$TAG_NAME" || ! -f "packages/$PACKAGE_NAME/package.json" ]]; then
+              echo "❌ tag name: $TAG_NAME doesn't point to any package under packages/"
+              exit 1
+          fi
+          if [[ "$(jq -r '.private // false' packages/$PACKAGE_NAME/package.json)" == "true" ]]; then
+              echo "❌ package $PACKAGE_NAME is private and cannot be published"
               exit 1
           fi
           echo "📦 Package name: @numerals/$PACKAGE_NAME"
           echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
-
-      - uses: actions/checkout@v4
 
       - name: fill package version
         run: |
