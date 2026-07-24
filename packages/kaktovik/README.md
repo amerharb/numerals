@@ -15,11 +15,6 @@ npm:
 npm i @numerals/kaktovik
 ```
 
-yarn:
-```shell
-yarn add @numerals/kaktovik
-```
-
 Type Script:
 ```js
 import { convert } from '@numerals/kaktovik';

@@ -15,11 +15,6 @@ npm:
 npm i @numerals/mayan
 ```
 
-yarn:
-```shell
-yarn add @numerals/mayan
-```
-
 Type Script:
 ```js
 import { convert } from '@numerals/mayan';

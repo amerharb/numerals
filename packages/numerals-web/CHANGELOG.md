@@ -2,6 +2,21 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.9.0] 2026-07-24
+### Added
+- Dark mode: follows the OS by default with a System/Light/Dark toggle (persisted to `localStorage`, no flash on load)
+- `vercel.json` declaring the Next.js framework for deployment
+
+### Changed
+- Upgrade Next.js from v14 to v16
+- Show all eight numeral systems at once — each result labeled with its system — instead of choosing one via a "To:" dropdown
+- Resolve the `?input=` query param in a server component (drop `useSearchParams`)
+- Compact footer; list packages inline instead of one per line
+
+### Removed
+- "To:" numeral-system dropdown and the `?to=` query param
+- Unused dependencies: `react-select`, `@emotion/react`, `@emotion/styled`, `@mui/joy`
+
 ## [0.8.0] 2024-10-16
 ### Added
 - Add Kaktovik numeral conversion

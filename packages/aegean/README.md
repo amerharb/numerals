@@ -15,11 +15,6 @@ npm:
 npm i @numerals/aegean
 ```
 
-yarn:
-```shell
-yarn add @numerals/aegean
-```
-
 Type Script:
 ```ts
 import { convert } from '@numerals/aegean';

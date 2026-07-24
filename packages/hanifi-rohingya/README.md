@@ -15,11 +15,6 @@ npm:
 npm i @numerals/hanifi-rohingya
 ```
 
-yarn:
-```shell
-yarn add @numerals/hanifi-rohingya
-```
-
 Type Script:
 ```js
 import { convert } from '@numerals/hanifi-rohingya';

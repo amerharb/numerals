@@ -15,11 +15,6 @@ npm:
 npm i @numerals/eastern-arabic
 ```
 
-yarn:
-```shell
-yarn add @numerals/eastern-arabic
-```
-
 Type Script:
 ```js
 import { convert } from '@numerals/eastern-arabic';

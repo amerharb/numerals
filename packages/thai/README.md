@@ -15,11 +15,6 @@ npm:
 npm i @numerals/thai
 ```
 
-yarn:
-```shell
-yarn add @numerals/thai
-```
-
 Type Script:
 ```js
 import { convert } from '@numerals/thai';

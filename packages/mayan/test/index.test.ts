@@ -38,6 +38,6 @@ describe('convert()', () => {
 	it.each([NaN, Infinity, -Infinity])
 	('throw Error for non number [%s]', (it) => {
 		const actual = () => convert(it)
-		expect(actual).toThrowError('Source is not a finite number')
+		expect(actual).toThrow('Source is not a finite number')
 	})
 })

@@ -1,8 +1,7 @@
-name: Publish Latest
-
+name: Publish
 on:
   release:
-    types: [ released ]
+    types: [ prereleased, released ]
 
 env:
   TAG_NAME: ${{ github.event.release.tag_name }}
@@ -11,9 +10,22 @@ env:
 
 jobs:
   publish:
-    name: Publish latest to npm
+    name: Publish to npm
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
+      - name: set npm tag
+        run: |
+          if [[ "${{ github.event.action }}" == "prereleased" ]]; then
+              NPM_TAG="next"
+          else
+              NPM_TAG="latest"
+          fi
+          echo "🏷️ npm tag: $NPM_TAG"
+          echo "NPM_TAG=$NPM_TAG" >> $GITHUB_ENV
+
       - name: fill package name
         run: |
           if [[ $TAG_NAME =~ ^eastern-arabic\/v.* ]]; then
@@ -49,8 +61,14 @@ jobs:
 
       - name: validate tag name
         run: |
-          if [[ ! $TAG_NAME =~ ^$PACKAGE_NAME\/v([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)$ ]]; then
-              echo "❌ Invalid tag name: $TAG_NAME not suitable for @latest tag"
+          SEMVER="([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)"
+          if [[ "$NPM_TAG" == "next" ]]; then
+              PATTERN="^$PACKAGE_NAME\/v${SEMVER}-next\.([0-9]|[1-9][0-9]*)$"
+          else
+              PATTERN="^$PACKAGE_NAME\/v${SEMVER}$"
+          fi
+          if [[ ! $TAG_NAME =~ $PATTERN ]]; then
+              echo "❌ Invalid tag name: $TAG_NAME not suitable for @$NPM_TAG tag"
               exit 1
           else
               echo "✅ Valid tag name: $TAG_NAME"
@@ -58,11 +76,17 @@ jobs:
 
       - name: validate version in package.json
         run: |
-          if [[ ! $PACKAGE_VERSION =~ ^([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)$ ]]; then
-              echo "❌ Invalid version name: $PACKAGE_VERSION not suitable for @latest publish"
+          SEMVER="([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)\.([0-9]|[1-9][0-9]*)"
+          if [[ "$NPM_TAG" == "next" ]]; then
+              PATTERN="^${SEMVER}-next\.([0-9]|[1-9][0-9]*)$"
+          else
+              PATTERN="^${SEMVER}$"
+          fi
+          if [[ ! $PACKAGE_VERSION =~ $PATTERN ]]; then
+              echo "❌ Invalid version name: $PACKAGE_VERSION not suitable for @$NPM_TAG publish"
               exit 1
           else
-              echo "✅ Valid @latest version: $PACKAGE_VERSION"
+              echo "✅ Valid @$NPM_TAG version: $PACKAGE_VERSION"
           fi
 
       - name: check if version in package.json is matching tag name
@@ -76,17 +100,18 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          # node 24.x ships npm >= 11.5.1 (first in 24.5.0), required for Trusted
+          # Publishing (OIDC) token-less auth. node 22 ships npm 10.x, which can
+          # sign provenance but cannot authenticate the publish.
+          node-version: 24.x
           registry-url: https://registry.npmjs.org
-          always-auth: true
-          cache: yarn
+          cache: npm
 
-      - run: yarn workspaces foreach --all install --immutable
-      - run: yarn lint
-      - run: yarn build
-      - run: yarn test
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
 
-      - name: publish @numerals package @latest to npm
-        run: yarn workspace @numerals/$PACKAGE_NAME npm publish --access public --tag latest
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NUMERALS_PUBLISH_AUTH_TOKEN }}
+      - name: publish @numerals/${{ env.PACKAGE_NAME }} to npm
+        working-directory: packages/${{ env.PACKAGE_NAME }}
+        run: npm publish --access public --tag ${{ env.NPM_TAG }} --provenance
