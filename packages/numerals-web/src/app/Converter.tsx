@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import Select from 'react-select'
+import { Fragment, useState } from 'react'
 import { convert as convertAr } from '@numerals/eastern-arabic'
 import { convert as convertMa } from '@numerals/mayan'
 import { convert as convertHi } from '@numerals/hieroglyphic'
@@ -12,81 +11,44 @@ import { convert as convertHr } from '@numerals/hanifi-rohingya'
 import { convert as convertKa } from '@numerals/kaktovik'
 import Image from 'next/image'
 import ThemeToggle from '@/components/ThemeToggle'
-import { Numerals, getNumerals } from './types'
 
-const DEFAULT_TO = Numerals.EasternArabic
 const DEFAULT_INPUT = ''
 
-// Theme react-select via CSS variables so its control/menu follow the color scheme.
-const selectStyles = {
-	control: (base: any) => ({ ...base, backgroundColor: 'var(--surface)', borderColor: 'var(--border)' }),
-	menu: (base: any) => ({ ...base, backgroundColor: 'var(--surface)' }),
-	option: (base: any, state: any) => ({
-		...base,
-		backgroundColor: state.isFocused ? 'var(--surface-hover)' : 'var(--surface)',
-		color: 'var(--fg)',
-	}),
-	singleValue: (base: any) => ({ ...base, color: 'var(--fg)' }),
-	input: (base: any) => ({ ...base, color: 'var(--fg)' }),
-	placeholder: (base: any) => ({ ...base, color: 'var(--muted)' }),
+// Every numeral system, shown at once: display name, npm package slug, and converter.
+const systems = [
+	{ name: 'Eastern Arabic', slug: 'eastern-arabic', convert: convertAr },
+	{ name: 'Mayan', slug: 'mayan', convert: convertMa },
+	{ name: 'Hieroglyphic', slug: 'hieroglyphic', convert: convertHi },
+	{ name: 'Roman', slug: 'roman', convert: convertRo },
+	{ name: 'Aegean', slug: 'aegean', convert: convertAg },
+	{ name: 'Thai', slug: 'thai', convert: convertTh },
+	{ name: 'Hanifi Rohingya', slug: 'hanifi-rohingya', convert: convertHr },
+	{ name: 'Kaktovik', slug: 'kaktovik', convert: convertKa },
+] as const
+
+// Convert the entered number with one system, surfacing validation errors as text.
+function convertOne(text: string, convert: (n: number) => string): string {
+	const trimmed = text.trim()
+	if (trimmed === '') {
+		return ''
+	}
+	try {
+		return convert(parseFloat(trimmed))
+	} catch (e: any) {
+		return e.message
+	}
 }
 
-// Reads ?to= & ?input= query params (resolved by the server component in page.tsx) to
-// preselect the dropdown and prefill the input, e.g. ?to=roman&input=42
-export default function Converter({ to, input }: { to?: string; input?: string }) {
-	const landingTo = getNumerals(to, DEFAULT_TO)
-	const landingInput = input ?? DEFAULT_INPUT
-	const [toValue, setToValue] = useState<Numerals>(landingTo)
-	const [textBoxValue, setTextBoxValue] = useState(landingInput)
-	const landingResult = landingInput ? convert(parseFloat(landingInput), landingTo) : ''
-	const [resultText, setResultText] = useState(landingResult)
-
-
-	const options = [
-		{ value: Numerals.EasternArabic, label: 'Eastern Arabic ٤ ٣ ٢ ١' },
-		{ value: Numerals.Mayan, label: 'Mayan 𝋠 𝋡 𝋢 𝋣' },
-		{ value: Numerals.Hieroglyphic, label: 'Hieroglyphic 𓁨 𓆐 𓂭 𓆼' },
-		{ value: Numerals.Roman, label: 'Roman Ⅰ Ⅱ Ⅲ Ⅳ' },
-		{ value: Numerals.Aegean, label: 'Aegean 𐄇 𐄈 𐄐 𐄙' },
-		{ value: Numerals.Thai, label: 'Thai ๑ ๒ ๓ ๔' },
-		{ value: Numerals.HanifiRohingya, label: 'Hanifi Rohingya 𐴐 𐴑 𐴒 𐴓' },
-		{ value: Numerals.Kaktovik, label: 'Kaktovik 𝋀 𝋁 𝋂 𝋃' },
-	]
-
-	function toSelectComponent  () {
-		return <div style={{ marginBottom: '10px' }}>
-			<label htmlFor="toDropdown" style={{ marginRight: '10px' }}>
-				To:
-			</label>
-			<Select
-				id="toDropdown"
-				instanceId="toDropdown"
-				isSearchable={false}
-				styles={selectStyles}
-				options={options}
-				defaultValue={options.find(option => option.value === toValue)}
-				onChange={(selectedOption) => {
-					if (!selectedOption) {
-						setToValue(DEFAULT_TO)
-						return
-					}
-					setToValue(selectedOption.value)
-					try {
-						const result = convert(parseFloat(textBoxValue), selectedOption.value)
-						setResultText(result)
-					} catch (e: any) {
-						setResultText(e.message)
-					}
-				}}
-			/>
-		</div>
-	}
+// Reads the ?input= query param (resolved by the server component in page.tsx) to
+// prefill the input, e.g. ?input=42
+export default function Converter({ input }: { input?: string }) {
+	const [textBoxValue, setTextBoxValue] = useState(input ?? DEFAULT_INPUT)
 
 	return (
 		<main style={{ textAlign: 'center', padding: '20px' }}>
 			<ThemeToggle/>
 			<h1>Numerals Converter</h1>
-			<label htmlFor="numberInput" style={{ marginRight: '10px' }}>
+			<label htmlFor="editTextBox" style={{ marginRight: '10px' }}>
 					Enter Number:
 			</label>
 			<input
@@ -97,111 +59,51 @@ export default function Converter({ to, input }: { to?: string; input?: string }
 				pattern="-?[0-9]*(\.[0-9]+)?"
 				inputMode="decimal"
 				value={textBoxValue}
-				onChange={(e) => {
-					setTextBoxValue(e.target.value)
-					const lines = e.target.value.split(/\n+|\s+/).map((line) => line.trim())
-					let result = ''
-					lines.forEach((line) => {
-						if (line.length === 0) return
-						try {
-							const converted = convert(parseFloat(line), toValue)
-							result += `${converted}\n`
-						} catch (e: any) {
-							result += `${e.message}\n`
-						}
-					})
-					setResultText(result)
-				}}
-				style={{ padding: '10px', width: '100%', minHeight: '100px', fontSize: '25px' }}
+				onChange={(e) => setTextBoxValue(e.target.value)}
+				style={{ padding: '10px', width: '100%', fontSize: '25px' }}
 			/>
-			{toSelectComponent()}
-			<div>
-				<label htmlFor="resultLabel" style={{ marginRight: '10px' }}>
-						Result:
-				</label>
-				<br/>
-				<span
-					id="resultLabel"
-					dir="auto"
-					style={{ padding: '10px', width: '100%', minHeight: '100px', fontSize: '25px' }}
-				>
-					{resultText}
-				</span>
+
+			<div
+				style={{
+					display: 'grid',
+					gridTemplateColumns: 'auto 1fr',
+					gap: '10px 16px',
+					alignItems: 'center',
+					textAlign: 'left',
+					maxWidth: '600px',
+					margin: '20px auto',
+				}}
+			>
+				{systems.map((system) => (
+					<Fragment key={system.slug}>
+						<div style={{ fontSize: '14px', color: 'var(--muted)' }}>{system.name}</div>
+						<div dir="auto" style={{ fontSize: '25px' }}>{convertOne(textBoxValue, system.convert)}</div>
+					</Fragment>
+				))}
 			</div>
+
 			<hr/>
-			<div style={{ marginTop: '20px', fontSize: '22px' }}>
-					This is an open source project. based on <Image src="/images/Npm-logo.svg" alt="NPM" width={54}
-					height={21}
-					style={{ width: '54px', height: '21px' }}/> packages:{' '}
+			<div style={{ marginTop: '15px', fontSize: '14px' }}>
+					This is an open source project, based on <Image src="/images/Npm-logo.svg" alt="NPM" width={36}
+					height={14} style={{ width: '36px', height: '14px', verticalAlign: 'middle' }}/> packages:{' '}
+				{systems.map((system, i) => (
+					<span key={system.slug}>
+						<a href={`https://www.npmjs.com/package/@numerals/${system.slug}`} style={{ textDecoration: 'none' }}>
+							@numerals/{system.slug}
+						</a>{i < systems.length - 1 ? ', ' : ''}
+					</span>
+				))}
 				<br/>
-				<div style={{ marginTop: '20px', fontSize: '18px' }}>
-					<a href="https://www.npmjs.com/package/@numerals/eastern-arabic" style={{ textDecoration: 'none' }}>
-						{' '}@numerals/eastern-arabic
-					</a>
-					<br/>
-					<a href="https://www.npmjs.com/package/@numerals/mayan" style={{ textDecoration: 'none' }}>
-						{' '}@numerals/mayan
-					</a>
-					<br/>
-					<a href="https://www.npmjs.com/package/@numerals/hieroglyphic" style={{ textDecoration: 'none' }}>
-						{' '}@numerals/hieroglyphic
-					</a>
-					<br/>
-					<a href="https://www.npmjs.com/package/@numerals/roman" style={{ textDecoration: 'none' }}>
-						{' '}@numerals/roman
-					</a>
-					<br/>
-					<a href="https://www.npmjs.com/package/@numerals/aegean" style={{ textDecoration: 'none' }}>
-						{' '}@numerals/aegean
-					</a>
-					<br/>
-					<a href="https://www.npmjs.com/package/@numerals/thai" style={{ textDecoration: 'none' }}>
-						{' '}@numerals/thai
-					</a>
-					<br/>
-					<a href="https://www.npmjs.com/package/@numerals/hanifi-rohingya" style={{ textDecoration: 'none' }}>
-						{' '}@numerals/hanifi-rohingya
-					</a>
-					<br/>
-					<a href="https://www.npmjs.com/package/@numerals/kaktovik" style={{ textDecoration: 'none' }}>
-						{' '}@numerals/kaktovik
-					</a>
-					<br/>
-				</div>
 					You can find the source code on{' '}
 				<a href="https://www.github.com/amerharb/numerals" style={{ textDecoration: 'none' }}>
-					<Image className="github-logo" src="/images/Github-logo.svg" alt="GitHub" width={32}
-									 height={32}
-									 style={{ width: '32px', height: '32px' }}/>
+					<Image className="github-logo" src="/images/Github-logo.svg" alt="GitHub" width={20} height={20}
+									 style={{ width: '20px', height: '20px', verticalAlign: 'middle' }}/>
 					{' '}GitHub
-				</a>
-				<br/>
-					You welcome to contribute to the project.
+				</a>. You welcome to contribute to the project.
 			</div>
-			<div style={{ marginTop: '25px', fontSize: '22px' }}>
+			<div style={{ marginTop: '15px', fontSize: '14px' }}>
 				<a href="mailto:numerals@amerharb.com" style={{ textDecoration: 'none' }}>✉️ Email</a>
 			</div>
 		</main>
 	)
-}
-
-function convert(source: number, to: Numerals): string {
-	switch (to) {
-	case Numerals.EasternArabic:
-		return convertAr(source)
-	case Numerals.Mayan:
-		return convertMa(source)
-	case Numerals.Hieroglyphic:
-		return convertHi(source)
-	case Numerals.Roman:
-		return convertRo(source)
-	case Numerals.Aegean:
-		return convertAg(source)
-	case Numerals.Thai:
-		return convertTh(source)
-	case Numerals.HanifiRohingya:
-		return convertHr(source)
-	case Numerals.Kaktovik:
-		return convertKa(source)
-	}
 }

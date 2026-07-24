@@ -9,10 +9,13 @@
 
 ### Changed
 - Upgrade Next.js from v14 to v16
-- Read `to` & `input` query params in a server component and pass them to the client Converter component (drop `useSearchParams`)
+- Show all eight numeral systems at once — each result labeled with its system — instead of choosing one via a "To:" dropdown
+- Resolve the `?input=` query param in a server component (drop `useSearchParams`)
+- Compact footer; list packages inline instead of one per line
 
-### Fixed
-- react-select hydration mismatch by setting a stable `instanceId`
+### Removed
+- "To:" numeral-system dropdown and the `?to=` query param
+- Unused dependencies: `react-select`, `@emotion/react`, `@emotion/styled`, `@mui/joy`
 
 ## [0.8.0] 2024-10-16
 ### Added

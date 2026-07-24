@@ -2,9 +2,6 @@
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
 ## [0.9.0]  2026-07-24
-### Added
-- Dark mode in numerals-web with a System/Light/Dark toggle
-
 ### Changed
 - Change package manager from yarn to npm
 - Migrate ESLint to v9 flat config (`eslint.config.mjs`)
@@ -18,7 +15,6 @@
 ## [0.8.0]  2024-10-09
 ### Added
 - Add Kaktovik numeral package
-- inputMode="decimal" for input, iPhone keyboard will show numeric pad
 
 ## [0.7.0]  2024-05-16
 ### Added
