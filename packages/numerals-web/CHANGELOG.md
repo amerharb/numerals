@@ -2,8 +2,13 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
-## [0.9.0] 2024-07-24
+## [0.9.0] 2026-07-24
+### Changed
+- Upgrade Next.js from v14 to v16
+- Read `to` & `input` query params in a server component and pass them to the client Converter component (drop `useSearchParams`)
 
+### Fixed
+- react-select hydration mismatch by setting a stable `instanceId`
 
 ## [0.8.0] 2024-10-16
 ### Added
