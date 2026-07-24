@@ -9,6 +9,7 @@ import { convert as convertAg } from '@numerals/aegean'
 import { convert as convertTh } from '@numerals/thai'
 import { convert as convertHr } from '@numerals/hanifi-rohingya'
 import { convert as convertKa } from '@numerals/kaktovik'
+import { convert as convertBa } from '@numerals/babylonian'
 import Image from 'next/image'
 import ThemeToggle from '@/components/ThemeToggle'
 
@@ -24,6 +25,7 @@ const systems = [
 	{ name: 'Thai', slug: 'thai', convert: convertTh },
 	{ name: 'Hanifi Rohingya', slug: 'hanifi-rohingya', convert: convertHr },
 	{ name: 'Kaktovik', slug: 'kaktovik', convert: convertKa },
+	{ name: 'Babylonian', slug: 'babylonian', convert: convertBa },
 ] as const
 
 // Convert the entered number with one system, surfacing validation errors as text.
