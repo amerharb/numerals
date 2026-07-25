@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@numerals/aegean": "0.0.1",
-		"@numerals/babylonian": "0.0.1-next.0",
+		"@numerals/babylonian": "0.0.1",
 		"@numerals/eastern-arabic": "0.0.2",
 		"@numerals/hanifi-rohingya": "0.0.1",
 		"@numerals/hieroglyphic": "0.0.2",
