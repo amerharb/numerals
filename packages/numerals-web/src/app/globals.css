@@ -61,6 +61,24 @@ hr {
 	border-top: 1px solid var(--border);
 }
 
+/* Small icon-only button for copying a result to the clipboard. */
+.copy-btn {
+	background: none;
+	border: none;
+	color: var(--muted);
+	padding: 4px;
+	border-radius: 6px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.copy-btn:hover {
+	background-color: var(--surface-hover);
+	color: var(--fg);
+}
+
 /* The GitHub mark is near-black (#24292E); invert it so it stays visible on dark. */
 :root[data-theme='dark'] .github-logo {
 	filter: invert(1);
