@@ -27,6 +27,9 @@ This is a monorepo for the Numerals project.
 ### kaktovik 𝋀 𝋁 𝋂 𝋃
 [README](https://github.com/amerharb/numerals/blob/main/packages/kaktovik/README.md)
 
+### babylonian 𒁹 𒌋 𒌋𒁹
+[README](https://github.com/amerharb/numerals/blob/main/packages/babylonian/README.md)
+
 ### numerals-client
 Example of a client for npm package
 
