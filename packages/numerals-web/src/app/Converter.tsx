@@ -29,15 +29,17 @@ const systems = [
 ] as const
 
 // Convert the entered number with one system, surfacing validation errors as text.
-function convertOne(text: string, convert: (n: number) => string): string {
+type Result = { ok: boolean, text: string }
+
+function convertOne(text: string, convert: (n: number) => string): Result {
 	const trimmed = text.trim()
 	if (trimmed === '') {
-		return ''
+		return { ok: true, text: '' }
 	}
 	try {
-		return convert(parseFloat(trimmed))
+		return { ok: true, text: convert(parseFloat(trimmed)) }
 	} catch (e: any) {
-		return e.message
+		return { ok: false, text: e.message }
 	}
 }
 
@@ -73,19 +75,39 @@ export default function Converter({ input }: { input?: string }) {
 					alignItems: 'center',
 					textAlign: 'left',
 					maxWidth: '600px',
-					margin: '20px auto',
+					margin: '20px 0',
 				}}
 			>
-				{systems.map((system) => (
-					<Fragment key={system.slug}>
-						<div style={{ fontSize: '14px', color: 'var(--muted)' }}>{system.name}</div>
-						<div dir="auto" style={{ fontSize: '25px' }}>{convertOne(textBoxValue, system.convert)}</div>
-					</Fragment>
-				))}
+				{systems.map((system) => {
+					const result = convertOne(textBoxValue, system.convert)
+					return (
+						<Fragment key={system.slug}>
+							<div style={{ fontSize: '14px', color: 'var(--muted)' }}>{system.name}</div>
+							{/* Fixed row height and no wrapping so the grid keeps its size while
+							    typing; error messages are small and muted so they stay on one line. */}
+							<div
+								dir="auto"
+								style={{
+									fontSize: result.ok ? '25px' : '13px',
+									color: result.ok ? undefined : 'var(--muted)',
+									fontStyle: result.ok ? undefined : 'italic',
+									height: '44px',
+									display: 'flex',
+									alignItems: 'center',
+									whiteSpace: 'nowrap',
+									overflowX: 'auto',
+									overflowY: 'hidden',
+								}}
+							>
+								{result.text}
+							</div>
+						</Fragment>
+					)
+				})}
 			</div>
 
 			<hr/>
-			<div style={{ marginTop: '15px', fontSize: '14px' }}>
+			<div style={{ marginTop: '15px', fontSize: '14px', textAlign: 'left' }}>
 					This is an open source project, based on <Image src="/images/Npm-logo.svg" alt="NPM" width={36}
 					height={14} style={{ width: '36px', height: '14px', verticalAlign: 'middle' }}/> packages:{' '}
 				{systems.map((system, i) => (
@@ -102,9 +124,7 @@ export default function Converter({ input }: { input?: string }) {
 									 style={{ width: '20px', height: '20px', verticalAlign: 'middle' }}/>
 					{' '}GitHub
 				</a>. You welcome to contribute to the project.
-			</div>
-			<div style={{ marginTop: '15px', fontSize: '14px' }}>
-				<a href="mailto:numerals@amerharb.com" style={{ textDecoration: 'none' }}>✉️ Email</a>
+				<a href="mailto:numerals@amerharb.com" style={{ textDecoration: 'none' }}> ✉️ Email</a>
 			</div>
 		</main>
 	)
