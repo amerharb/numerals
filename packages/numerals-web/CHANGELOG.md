@@ -2,6 +2,10 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.9.1] 2026-07-25
+### Added
+- Babylonian (sexagesimal, base-60) as the ninth numeral system, using @numerals/babylonian 0.0.1
+
 ## [0.9.0] 2026-07-24
 ### Added
 - Dark mode: follows the OS by default with a System/Light/Dark toggle (persisted to `localStorage`, no flash on load)
