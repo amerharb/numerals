@@ -9,6 +9,10 @@
 
 `72 -> 𒁹 𒌋𒁹𒁹`
 
+Used in ancient Mesopotamia (~2000 BCE), this is the earliest known place-value number
+system. Its base of 60 is why we still divide an hour into 60 minutes and a circle into
+360 degrees.
+
 ## How to use
 npm:
 ```shell
