@@ -12,6 +12,7 @@ import { convert as convertKa } from '@numerals/kaktovik'
 import { convert as convertBa } from '@numerals/babylonian'
 import Image from 'next/image'
 import ThemeToggle from '@/components/ThemeToggle'
+import { version } from '../../package.json'
 
 const DEFAULT_INPUT = ''
 
@@ -170,6 +171,7 @@ export default function Converter({ input }: { input?: string }) {
 					{' '}GitHub
 				</a>. You welcome to contribute to the project.
 				<a href="mailto:numerals@amerharb.com" style={{ textDecoration: 'none' }}> ✉️ Email</a>
+				<span style={{ color: 'var(--muted)' }}> · v{version}</span>
 			</div>
 		</main>
 	)
