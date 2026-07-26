@@ -2,9 +2,16 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
-## [0.9.1] 2026-07-25
+## [0.9.1] 2026-07-26
 ### Added
 - Babylonian (sexagesimal, base-60) as the ninth numeral system, using @numerals/babylonian 0.0.1
+- Copy-to-clipboard button next to each result, with a brief checkmark confirmation
+- Web version shown in the footer (read from package.json)
+
+### Changed
+- Left-align the results grid and the footer credit (was centered)
+- Result rows keep a fixed height, so the grid no longer grows suddenly while typing
+- Conversion error messages are shown small and muted on one line, instead of full-size text wrapping over two lines
 
 ## [0.9.0] 2026-07-24
 ### Added
