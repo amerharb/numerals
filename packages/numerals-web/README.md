@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/version-0.9.1-blue.svg)](https://github.com/amerharb/numerals/tree/numerals-web/version/0.9.1)
+[![Version](https://img.shields.io/badge/version-0.9.2-blue.svg)](https://github.com/amerharb/numerals/tree/numerals-web/version/0.9.2)
 # Numerals web page
 
 A web page for the Numerals project, built with Next.js v16. Enter a number and see it

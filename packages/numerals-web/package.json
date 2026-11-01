@@ -1,7 +1,7 @@
 {
 	"name": "numerals-web",
 	"private": true,
-	"version": "0.9.1",
+	"version": "0.9.2",
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -22,7 +22,7 @@
 		"@numerals/thai": "0.0.2",
 		"@vercel/analytics": "^1.1.2",
 		"@vercel/speed-insights": "^1.0.9",
-		"next": "16.2.11",
+		"next": "16.4.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
@@ -31,7 +31,7 @@
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
 		"eslint": "^9.0.0",
-		"eslint-config-next": "^16.2.9",
+		"eslint-config-next": "^16.4.3",
 		"typescript": "^5.4.4"
 	}
 }

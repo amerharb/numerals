@@ -2,6 +2,11 @@
 
 <!-- https://keepachangelog.com/en/1.0.0/ -->
 
+## [0.9.2] 2026-11-01
+### Changed
+- Upgrade Next.js from v16.2.11 to v16.4.3, which fixes critical security advisories
+- Update nanoid, postcss, sharp and source-map-js in the lockfile to versions without known advisories
+
 ## [0.9.1] 2026-07-26
 ### Added
 - Babylonian (sexagesimal, base-60) as the ninth numeral system, using @numerals/babylonian 0.0.1
